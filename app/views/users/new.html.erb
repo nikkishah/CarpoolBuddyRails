@@ -1,0 +1,29 @@
+<form accept-charset="UTF-8" action="/users" class="new_user"
+      id="new_user" method="post">
+
+  <label for="user_first_name">First Name</label>
+  <input id="user_name" name="user[first_name]" type="text" />
+  <label for="user_lastname">Last Name</label>
+  <input id="user_name" name="user[lastName]" type="text" />
+  <label for="user_email">Email</label>
+  <input id="user_email" name="user[email]" type="text" />
+  <label for="user_street">Street</label>
+  <input id="user_street" name="user[street]" type="text" />
+  <label for="user_city">City</label>
+  <input id="user_city" name="user[city]" type="text" />
+  <label for="user_state">State</label>
+  <input id="user_state" name="user[state]" type="text" />
+  <label for="user_zipcode">Zipcode</label>
+  <input id="user_zipcode" name="user[zipcode]" type="text" />
+
+  <label for="user_password">Password</label>
+  <input id="user_password" name="user[password]"
+         type="password" />
+
+  <label for="user_password_confirmation">Confirmation</label>
+  <input id="user_password_confirmation"
+         name="user[password_confirmation]" type="password" />
+
+  <input class="btn btn-large btn-primary" name="commit" type="submit"
+         value="Create my account" />
+</form>
