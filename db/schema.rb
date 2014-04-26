@@ -11,7 +11,70 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140426194437) do
+ActiveRecord::Schema.define(version: 20140426203432) do
+
+  create_table "calendars", force: true do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.integer  "group_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "children", force: true do |t|
+    t.string   "name"
+    t.string   "highschool"
+    t.string   "sex"
+    t.string   "grade"
+    t.string   "passcode"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+    t.integer  "school_id"
+  end
+
+  create_table "events", force: true do |t|
+    t.datetime "datetime"
+    t.integer  "user_id"
+    t.integer  "calendar_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "families", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "child_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "forums", force: true do |t|
+    t.integer  "group_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "groups", force: true do |t|
+    t.string   "name"
+    t.string   "capacity"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "posts", force: true do |t|
+    t.integer  "forum_id"
+    t.string   "message"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "subscriptions", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "group_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "first_name"

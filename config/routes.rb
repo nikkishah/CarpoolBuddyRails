@@ -1,4 +1,20 @@
 Rails.application.routes.draw do
+  # resources :posts
+
+  resources :forums do
+    resources :posts
+  end
+
+  # resources :events
+
+  resources :calendars do
+    resources :events
+  end
+
+  resources :groups
+
+  resources :children
+
   resources :users
   resource :sessions, only: [:new, :create, :destroy]
   match '/signup',  to: 'users#new',            via: 'get'
