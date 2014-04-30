@@ -1,0 +1,61 @@
+html, body, .row, .col-md-1, .col-md-5, .col-md-7, .col-md-11 { height: 100% }
+
+.blockquote-box{border-right:5px solid #E6E6E6; margin-bottom:25px; background-color: #ffffff}
+.blockquote-box-custom{border-right:5px solid #E6E6E6; margin-bottom:25px; background-color: #ffffff}
+
+.blockquote-box.blockquote-primary{border-color:#357EBD}
+.blockquote-box.blockquote-success{border-color:#4CAE4C}
+.blockquote-box.blockquote-info{border-color:#46B8DA}
+.blockquote-box.blockquote-warning{border-color:#EEA236}
+.blockquote-box.blockquote-danger{border-color:#D43F3A}
+
+#map-canvas {
+	width:100%;
+ 	height:100%;
+}
+
+.btn-custom {
+  background-color: #3f3f3f;
+  font-family: 'Signika';
+}
+
+.calendar_outer{
+	display:table;
+	margin: 0 auto;
+}
+
+.center_elm{
+	display: table;
+	margin: 0 auto;
+}
+
+.clicked_on{
+	color: white;
+	background-color: #357EBD;
+}
+
+.existing_group_btn{
+	font-size: 20px;
+	margin-top: 10px;
+	margin-left: 5px;
+}
+
+.nearby_groups_heading{
+	background-color: #7e7e7e;
+	text-align: center;
+	color: white;
+	border: black solid 1px;
+	font-family: 'Signika';
+}
+
+.new_group_btn{
+	font-size: 20px;
+	margin-top: 10px;
+	margin-right: 5px;
+}
+
+.selected_group{
+	text-align: center;
+	color: black;
+	font-family: 'Signika';
+}

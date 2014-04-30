@@ -1,34 +1,133 @@
-<p id="notice"><%= notice %></p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Carpool Buddy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Import Bootstrap and custom CSS files -->
+    <%= stylesheet_link_tag "profile" %>
+    <%= stylesheet_link_tag "bootstrap.min.css" %>
+    <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Nixie+One" %>
+    <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Lobster&subset=latin,cyrillic-ext,latin-ext,cyrillic" %>
+    <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Signika&subset=latin,latin-ext" %>
+  </head>
+  
+  <body>
 
-<p>
-  <strong>First name:</strong>
-  <%= @user.first_name %>
-</p>
+    <div id="content" class="clearfix">
+    <section id="left">
+      <div id = "userStats" class="clearfix">
+        
+        <div class="pic">
+          <%= image_tag("avatar.png", :alt => "Your Avatar") %>
+        </div>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+        <div class="data">
+          <h1 class="username" id="username">Ben Bittdiddle </h1>
+          <h3 class = "userinfo" id="userphone">(336) 231-432 </h3>
+          <h3 class = "userinfo" id="useraddress">320 Memorial Dr Cambridge, MA 02139 </h3>
+          <h3 class = "userinfo" id="useremail"> ben@gmail.com </h3>
 
-<p>
-  <strong>Street:</strong>
-  <%= @user.street %>
-</p>
+          <div class= "updateButton">
+            <a class="btn btn-primary btn-large btn-custom new_group_btn" href="#update_form" id="update_pop"> Update </a>
+          </div>
+        </div>
+        
+        <div class="children">
+          <h1 class= "childrenTitle"> Your Children: </h1>
+          
+          <div class="child" id="childa">
+            <h2 class="childName"> Rolly Poly </h2>
+            <a class="delete-button" href="update"> Remove Child </a> 
+            <div class="sep"></div> 
+            <h3 class ="userinfo"> Bitdiddle High School </h3>
+            <h3 class= "userinfo">Sex :   Female </h3>
+            <h3 class="userinfo">Grade : 9th </h3>
+          </div>
 
-<p>
-  <strong>City:</strong>
-  <%= @user.city %>
-</p>
+          <div class="addChildWrapper">
+            <a href="#add_form" type="button" class="btn btn-primary btn-large btn-custom new_group_btn" id="addChild">Add Child</a>
+          </div>
+        </div>
 
-<p>
-  <strong>State:</strong>
-  <%= @user.state %>
-</p>
+        <!-- Add Child Form -->
+        <a href="#x" class="overlay" class="AddChild" id="add_form"></a>
+        <div class="popup">
+          <div class="username">Add Your Child</div>
+          <p>Please enter school and child's passcode here</p>
+          <div class="forminput">
+            <label for="school">School</label>
+            <input type="text" id="school" class="school" value="" />
+          </div>
+          <div class ="forminput2">
+            <label for="Your Child's Code">Passcode</label>
+            <input type="text" id="code" class="code" value="" />
+          </div>
+          <div class="addWrapper">
+            <a href="#close" type="button" class="btn btn-primary btn-large btn-custom new_group_btn" id="add"  > Add </a>
+          </div>
+          <div class="warningwrapper">
+            <div class="warning">If you do not know your child's passcode please see a</div> 
+            <div class="warning">school administrator</div>
+          </div>
+          <a class="close" href="#close"></a>
+        </div>
 
-<p>
-  <strong>Zipcode:</strong>
-  <%= @user.zipcode %>
-</p>
+        <!-- Update Information Form -->
+        
+        <a href="#x" class="overlay" id="update_form"></a>
+        <div class="popupform">
+          <form class="updateform">
+            <h2>Update Your Information</h2>
+            Name: <input type="text" id="name_inp"><br>
+            Phone: <input type="text" id="phone_inp"><br>
+            Address: <input type="text" id="address_inp"><br>
+            Email: <input type="text" id="email_inp"><br>
+            <div class="buttonOverlay">
+              <a type="button" class="btn btn-primary btn-large btn-custom new_group_btn" id="save" href="#close"> Update </a>
+            </div>
+          </form>
+          <a class="close" href="#close"></a>
+        </div>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+      <script type="text/javascript" src="external_js/jquery-1.9.0.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script type="text/javascript">
+    $("#add").click(function(evt) {
+      $("#childa").css("display", "inline");
+      $("#school").val("");
+      $("#code").val("");
+  });
+    $("#update_pop").click(function(evt) {
+      var elem = document.getElementById("name_inp");
+      var number = document.getElementById("username");
+      elem.value = number.textContent;
+      var elem = document.getElementById("phone_inp");
+      var number = document.getElementById("userphone");
+      elem.value = number.textContent;
+      var elem = document.getElementById("address_inp");
+      var number = document.getElementById("useraddress");
+      elem.value = number.textContent;
+      var elem = document.getElementById("email_inp");
+      var number = document.getElementById("useremail");
+      elem.value = number.textContent;
+    });
+    $("#save").click(function(evt) {
+      var elem = document.getElementById("name_inp");
+      var number = document.getElementById("username");
+      number.textContent = elem.value;
+      var elem = document.getElementById("phone_inp");
+      var number = document.getElementById("userphone");
+      number.textContent = elem.value;
+      var elem = document.getElementById("address_inp");
+      var number = document.getElementById("useraddress");
+      number.textContent = elem.value;
+      var elem = document.getElementById("email_inp");
+      var number = document.getElementById("useremail");
+      number.textContent = elem.value;
+    });
+
+
+    </script>
+  </body>
+</html>
