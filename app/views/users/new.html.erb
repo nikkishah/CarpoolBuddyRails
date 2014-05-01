@@ -1,32 +1,95 @@
+<%= stylesheet_link_tag "login" %>
     <%= stylesheet_link_tag "bootstrap.min.css" %>
     <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Lobster&subset=latin,cyrillic-ext,latin-ext,cyrillic" %>
     <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Signika&subset=latin,latin-ext' %>
-<form accept-charset="UTF-8" action="/users" class="new_user"
+    <%= javascript_include_tag "login" %>
+<body style="padding-top:100px;">
+<div class="carpool_buddy_div">
+    <h1 class="carpool_buddy_heading" style="padding-bottom:30px;">Carpool Buddy</h1> 
+</div>
+<div class="container">
+
+<div class="row">
+    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3" style="background-color:#fff; height:560px;">
+    <form accept-charset="UTF-8" action="/users" class="new_user"
       id="new_user" method="post">
+      <h2 style="text-align:center; color:#330f53">Please Sign Up </h2>
+      <hr class="colorgraph">
+      <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-6">
+          <div class="form-group">
+                        <input type="text" name="user[first_name]" id="first_name" class="form-control input-lg" placeholder="First Name" tabindex="1">
+          </div>
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-6">
+          <div class="form-group">
+            <input type="text" name="user[lastName]" id="last_name" class="form-control input-lg" placeholder="Last Name" tabindex="2">
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <input type="text" name="user[street]" id="user_street" class="form-control input-lg" placeholder="Street" tabindex="3">
+      </div>
 
-  <label for="user_first_name">First Name</label>
-  <input id="user_name" name="user[first_name]" type="text" />
-  <label for="user_lastname">Last Name</label>
-  <input id="user_name" name="user[lastName]" type="text" />
-  <label for="user_email">Email</label>
-  <input id="user_email" name="user[email]" type="text" />
-  <label for="user_street">Street</label>
-  <input id="user_street" name="user[street]" type="text" />
-  <label for="user_city">City</label>
-  <input id="user_city" name="user[city]" type="text" />
-  <label for="user_state">State</label>
-  <input id="user_state" name="user[state]" type="text" />
-  <label for="user_zipcode">Zipcode</label>
-  <input id="user_zipcode" name="user[zipcode]" type="text" />
+      <div class="row">
+        <div class="col-xs-5 col-sm-5 col-md-5">
+          <div class="form-group">
+                        <input type="text" name="user[city]" id="city" class="form-control input-lg" placeholder="City" tabindex="4">
+          </div>
+        </div>
+        <div class="col-xs-3 col-sm-3 col-md-3">
+          <div class="form-group">
+            <input type="text" name="user[state]" id="state" class="form-control input-lg" placeholder="State" tabindex="5">
+          </div>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-4">
+          <div class="form-group">
+            <input type="text" name="user[zipcode]" id="zipcode" class="form-control input-lg" placeholder="Zipcode" tabindex="6">
+          </div>
+        </div>
+      </div>
 
-  <label for="user_password">Password</label>
-  <input id="user_password" name="user[password]"
-         type="password" />
+      <div class="form-group">
+        <input type="email" name="user[email]" id="email" class="form-control input-lg" placeholder="Email Address" tabindex="7">
+      </div>
+      <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-6">
+          <div class="form-group">
+            <input type="password" name="user[password]" id="password" class="form-control input-lg" placeholder="Password" tabindex="8">
+          </div>
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-6">
+          <div class="form-group">
+            <input type="password" name="user[password_confirmation]" id="password_confirmation" class="form-control input-lg" placeholder="Confirm Password" tabindex="9">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12" >
+           By clicking <strong class="label label-primary">Register</strong>, you agree to the <a href="#" data-toggle="modal" data-target="#t_and_c_m">Terms and Conditions</a> set out by this site.
+        </div>
+      </div>
+      
+      <hr class="colorgraph">
+      <div class="row">
+        <div class="col-xs-8 col-md-8 col-sm-offset-2"><input type="submit" value="Register" class="btn btn-primary btn-block btn-lg" tabindex="7"></div>
+<!--         <div class="col-xs-6 col-md-6"><a href="/signin" class="btn btn-success btn-block btn-lg">Sign In</a></div> -->
+      </div>
+      <div class="col-xs-8 col-md-8 col-sm-offset-2">
+      <a href="/signin" style="text-align:center"> Already Have An Account? Sign In </a>
+    </div>
+    </form>
+  </div>
+</div>
+</div>
+</body>
 
-  <label for="user_password_confirmation">Confirmation</label>
-  <input id="user_password_confirmation"
-         name="user[password_confirmation]" type="password" />
-
-  <input class="btn btn-large btn-primary" name="commit" type="submit"
-         value="Create my account" />
-</form>
+<!-- Modal -->
+<div class="modal fade" id="t_and_c_m" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title" id="myModalLabel">Terms & Conditions</h4>
+      </div>
+      <div class="modal-body">
