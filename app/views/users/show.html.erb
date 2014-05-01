@@ -23,13 +23,14 @@
         </div>
 
         <div class="data">
-          <h1 class="username" id="username">Ben Bittdiddle </h1>
-          <h3 class = "userinfo" id="userphone">(336) 231-432 </h3>
-          <h3 class = "userinfo" id="useraddress">320 Memorial Dr Cambridge, MA 02139 </h3>
-          <h3 class = "userinfo" id="useremail"> ben@gmail.com </h3>
+          <h1 class="username" id="username" style="margin-top:0px">Ben Bittdiddle </h1>
+          <h3 class = "userinfo" id="userphone" style="margin-top:0px">(336) 231-432 </h3>
+          <h3 class = "userinfo" id="useraddress" style="margin-top:0px">320 Memorial Dr Cambridge, MA 02139 </h3>
+          <h3 class = "userinfo" id="useremail" style="margin-top:0px"> ben@gmail.com </h3>
 
           <div class= "updateButton">
             <a class="btn btn-primary btn-large btn-custom new_group_btn" href="#update_form" id="update_pop"> Update </a>
+            
           </div>
         </div>
         
@@ -52,8 +53,8 @@
 
         <!-- Add Child Form -->
         <a href="#x" class="overlay" class="AddChild" id="add_form"></a>
-        <div class="popup">
-          <div class="username">Add Your Child</div>
+        <div class="popup" style="height:320px">
+          <div class="username" style="text-align:center">Add Your Child</div>
           <p>Please enter school and child's passcode here</p>
           <div class="forminput">
             <label for="school">School</label>
@@ -63,12 +64,12 @@
             <label for="Your Child's Code">Passcode</label>
             <input type="text" id="code" class="code" value="" />
           </div>
-          <div class="addWrapper">
-            <a href="#close" type="button" class="btn btn-primary btn-large btn-custom new_group_btn" id="add"  > Add </a>
-          </div>
           <div class="warningwrapper">
             <div class="warning">If you do not know your child's passcode please see a</div> 
             <div class="warning">school administrator</div>
+          </div>
+          <div class="addWrapper">
+            <a href="#close" type="button" class="btn btn-primary btn-large btn-custom new_group_btn" id="add" style="width:80px;"  > Add </a>
           </div>
           <a class="close" href="#close"></a>
         </div>
