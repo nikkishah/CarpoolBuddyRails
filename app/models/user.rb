@@ -15,16 +15,16 @@ class User < ActiveRecord::Base
 	has_one :calendar
 
 	def User.new_remember_token
-		SecureRandom.urlsafe_base64
-	end
+    SecureRandom.urlsafe_base64
+  end
 
-	def User.digest(token)
-		Digest::SHA1.hexdigest(token.to_s)
-	end
+  def User.digest(token)
+    Digest::SHA1.hexdigest(token.to_s)
+  end
 
-	private
+  private
 
-	def create_remember_token
-		self.remember_token = User.digest(User.new_remember_token)
-	end
+    def create_remember_token
+      self.remember_token = User.digest(User.new_remember_token)
+    end
 end
