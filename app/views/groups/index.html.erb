@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= stylesheet_link_tag "navbar" %>
   <%= stylesheet_link_tag "groups" %>
+  <%= stylesheet_link_tag "profile" %>
   <%= stylesheet_link_tag "bootstrap.min.css" %>
   <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Nixie+One" %>
   <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Lobster&subset=latin,cyrillic-ext,latin-ext,cyrillic" %>
@@ -88,9 +89,11 @@
           </div>
 
             <div class="row groups_inner_row">
-        <div class="col-md-3"></div>
         <div class="col-md-3">
-          <%= link_to "Create New Group", new_group_path, :class => "btn btn-primary btn-large btn-custom new_group_btn" %>
+
+        </div>
+        <div class="col-md-3">
+          <a href="#add_group_form" type="button" class="btn btn-primary btn-large btn-custom new_group_btn" id="addGroup">Create New Group</a>
         </div>
         <div class="col-md-3">
           <%= link_to "Join Existing Group", new_group_path, :class => "btn btn-primary btn-large btn-custom new_group_btn" %>
@@ -107,6 +110,28 @@
       </div>
     </div>
   </div>
+    
+    
+
+   <!-- Add Group Form -->
+    <a href="#x" class="overlay" class="AddGroup" id="add_group_form"></a>
+    <div class="popup" style="height:320px">
+      <div class="name" style="text-align:center">Create New Group</div>
+      <p>Please add the name and capacity of your group.</p>
+      <div class="forminput">
+        <label for="Group Name">Group Name</label>
+        <input type="text" id="group_name" class="group_name" value="" />
+      </div>
+      <div class ="forminput2">
+        <label for="Capacity">Capacity</label>
+        <input type="text" id="capacity" class="capacity" value="" />
+      </div>
+      <div class="addWrapper">
+        <a href="#close" type="button" class="btn btn-primary btn-large btn-custom new_group_btn" id="add" style="width:80px;"  > Create Group </a>
+      </div>
+      <a class="close" href="#close"></a>
+    </div>
+
   <script type="text/javascript" src="groups.js"></script>
 
   </body>
