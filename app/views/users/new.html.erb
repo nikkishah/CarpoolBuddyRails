@@ -10,7 +10,7 @@
 <div class="container">
 
 <div class="row">
-    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3" style="background-color:#fff; height:560px;">
+    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3" style="background-color:#fff;">
     <form accept-charset="UTF-8" action="/users" class="new_user"
       id="new_user" method="post">
       <h2 style="text-align:center; color:#330f53">Please Sign Up </h2>
@@ -18,49 +18,49 @@
       <div class="row">
         <div class="col-xs-6 col-sm-6 col-md-6">
           <div class="form-group">
-                        <input type="text" name="user[first_name]" id="first_name" class="form-control input-lg" placeholder="First Name" tabindex="1">
+                        <input type="text" name="user[first_name]" id="first_name" class="form-control input" placeholder="First Name" tabindex="1">
           </div>
         </div>
         <div class="col-xs-6 col-sm-6 col-md-6">
           <div class="form-group">
-            <input type="text" name="user[lastName]" id="last_name" class="form-control input-lg" placeholder="Last Name" tabindex="2">
+            <input type="text" name="user[lastName]" id="last_name" class="form-control input" placeholder="Last Name" tabindex="2">
           </div>
         </div>
       </div>
       <div class="form-group">
-        <input type="text" name="user[street]" id="user_street" class="form-control input-lg" placeholder="Street" tabindex="3">
+        <input type="text" name="user[street]" id="user_street" class="form-control input" placeholder="Street" tabindex="3">
       </div>
 
       <div class="row">
         <div class="col-xs-5 col-sm-5 col-md-5">
           <div class="form-group">
-                        <input type="text" name="user[city]" id="city" class="form-control input-lg" placeholder="City" tabindex="4">
+                        <input type="text" name="user[city]" id="city" class="form-control input" placeholder="City" tabindex="4">
           </div>
         </div>
         <div class="col-xs-3 col-sm-3 col-md-3">
           <div class="form-group">
-            <input type="text" name="user[state]" id="state" class="form-control input-lg" placeholder="State" tabindex="5">
+            <input type="text" name="user[state]" id="state" class="form-control input" placeholder="State" tabindex="5">
           </div>
         </div>
         <div class="col-xs-4 col-sm-4 col-md-4">
           <div class="form-group">
-            <input type="text" name="user[zipcode]" id="zipcode" class="form-control input-lg" placeholder="Zipcode" tabindex="6">
+            <input type="text" name="user[zipcode]" id="zipcode" class="form-control input" placeholder="Zipcode" tabindex="6">
           </div>
         </div>
       </div>
 
       <div class="form-group">
-        <input type="email" name="user[email]" id="email" class="form-control input-lg" placeholder="Email Address" tabindex="7">
+        <input type="email" name="user[email]" id="email" class="form-control input" placeholder="Email Address" tabindex="7">
       </div>
       <div class="row">
         <div class="col-xs-6 col-sm-6 col-md-6">
           <div class="form-group">
-            <input type="password" name="user[password]" id="password" class="form-control input-lg" placeholder="Password" tabindex="8">
+            <input type="password" name="user[password]" id="password" class="form-control input" placeholder="Password" tabindex="8">
           </div>
         </div>
         <div class="col-xs-6 col-sm-6 col-md-6">
           <div class="form-group">
-            <input type="password" name="user[password_confirmation]" id="password_confirmation" class="form-control input-lg" placeholder="Confirm Password" tabindex="9">
+            <input type="password" name="user[password_confirmation]" id="password_confirmation" class="form-control input" placeholder="Confirm Password" tabindex="9">
           </div>
         </div>
       </div>
@@ -72,12 +72,15 @@
       
       <hr class="colorgraph">
       <div class="row">
-        <div class="col-xs-8 col-md-8 col-sm-offset-2"><input type="submit" value="Register" class="btn btn-primary btn-block btn-lg" tabindex="7"></div>
-<!--         <div class="col-xs-6 col-md-6"><a href="/signin" class="btn btn-success btn-block btn-lg">Sign In</a></div> -->
+        <div class="col-xs-8 col-md-8 col-md-offset-2">
+          <input type="submit" value="Register" class="btn btn-primary btn-block" tabindex="7">
+        </div>
       </div>
-      <div class="col-xs-8 col-md-8 col-sm-offset-2">
-      <a href="/signin" style="text-align:center"> Already Have An Account? Sign In </a>
-    </div>
+      <div class="row">  
+        <div class="col-xs-8 col-md-8 col-md-offset-2">             
+          <a href="/signin" style="text-align:center" class="text-center"><p style="margin-top:10px;" class="text-center">Already Have An Account? Sign In</p></a>
+        </div>
+      </div>
     </form>
   </div>
 </div>
