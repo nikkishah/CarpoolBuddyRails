@@ -1,0 +1,20 @@
+body { 
+	padding-top: 70px; 
+}
+
+.navbar_option{
+	font-family: 'Signika';
+	font-size: 17px;
+}
+
+.navbar_title{
+	font-family: "Lobster";
+	font-size: 30px;
+	color:#ffff7f;
+}
+
+#logo{
+	font-family: "Lobster";
+	font-size: 30px;
+	color:#B0B0B0 ;
+}
