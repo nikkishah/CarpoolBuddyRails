@@ -121,20 +121,36 @@
 
    <!-- Add Group Form -->
     <a href="#x" class="overlay" class="AddGroup" id="add_group_form"></a>
-    <div class="popup" style="height:300px">
-      <div class="name" style="text-align:center; font-size:25px; color:black; font-weight:10px; border:#E8E8E8 dashed 2px;">Create New Group</div>
+    <div class="popup" style="height:350px">
+       <div class="name" style="text-align:center; font-size:25px; color:black; font-weight:10px; border:#E8E8E8 dashed 2px;">Create New Group</div>
       <p style="text-align:center;">Please add the name & capacity of your group.</p>
-      <div class="forminput" style="text-align:center;">
+      <%= form_for :group, url: {action: "create"}  do |f| %>
+        <div class="forminput" style="text-align:center;">
+          <%= f.label :group_name %><br>
+          <%= f.text_field :group_name %>
+        </div>
+       
+        <div class ="forminput2" style="text-align:center;">
+          <%= f.label :capacity %><br>
+          <%= f.text_field :capacity %>
+        </div>
+       
+        <div class="addWrapper">
+          <input type="submit" class="btn btn-primary btn-block" id="add" value="Create Group" />
+        </div>
+      <% end %>
+
+      <!-- <div >
         <label for="Group Name">Group Name</label>
         <input type="text" id="group_name" class="group_name" value="" />
       </div>
-      <div class ="forminput2" style="text-align:center;">
+      <div >
         <label for="Capacity">Capacity</label>
         <input type="text" id="capacity" class="capacity" value="" />
       </div>
-      <div class="addWrapper">
+      <div >
         <a href="#close" type="button" class="btn btn-primary btn-block" id="add"> Create Group </a>
-      </div>
+      </div> -->
       <a class="close" href="#close"></a>
     </div>
 
