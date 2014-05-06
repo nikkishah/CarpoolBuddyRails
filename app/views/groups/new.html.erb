@@ -23,6 +23,17 @@
 			<h3 class="nearby_groups_heading">Groups Near You</h3>
 		    
 		    <div class="col-md-6">
+		    	<ul class="pagination pagination-sm center_elm" style="margin-top:20px;">
+<!-- 					<ul class="pagination pagination-sm center_elm" style="opacity:0.3">
+-->				  <li><a href="#">&laquo;</a></li>
+				  <li><a href="#">1</a></li>
+				  <li><a href="#">2</a></li>
+				  <li><a href="#">3</a></li>
+				  <li><a href="#">4</a></li>
+				  <li><a href="#">5</a></li>
+				  <li><a href="#">&raquo;</a></li>
+				</ul>
+
 			    <div class="list-group " style="font-family:Signika; margin-top: 20px; margin-left:-15px;">
 					<!-- <a href="group_view.html?name=Esha-Atolia&distance=1.5" class="list-group-item blockquote-box blockquote-primary clicked_on"> -->
 					<a href="group_view.html?name=Esha-Atolia&distance=1.5" class="list-group-item blockquote-box blockquote-primary">
@@ -46,16 +57,7 @@
 						<p class="list-group-item-text">Member 1, Member 2, Member 3</p>
 					</a>
 				</div>
-					<ul class="pagination pagination-sm center_elm">
-<!-- 					<ul class="pagination pagination-sm center_elm" style="opacity:0.3">
- -->				  <li><a href="#">&laquo;</a></li>
-					  <li><a href="#">1</a></li>
-					  <li><a href="#">2</a></li>
-					  <li><a href="#">3</a></li>
-					  <li><a href="#">4</a></li>
-					  <li><a href="#">5</a></li>
-					  <li><a href="#">&raquo;</a></li>
-					</ul>
+				
 			</div>
 		    
 		    <div class="col-md-6">
@@ -72,8 +74,8 @@
 		<div class="row">
 			<div class="col-md-2"></div>
 			<div class="col-md-7" style="margin-left:-50px; margin-top:-30px;">
-				<%= link_to "Cancel", groups_path, :class => "btn btn-primary btn-large new_group_btn" %>
-				<%= link_to "Request Group Invite", groups_path, :class => "btn btn-primary btn-large existing_group_btn" %>
+				<%= link_to "Back to Your Groups", groups_path, :class => "btn btn-primary btn-large center_elm new_group_btn" %>
+				<%= link_to "Request Group Invite", groups_path, :class => "btn btn-primary btn-large center_elm existing_group_btn" %>
 			</div>
 			<div class="col-md-3"></div>
 		</div>

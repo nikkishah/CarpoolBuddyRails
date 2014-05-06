@@ -39,6 +39,9 @@ html, body, .row, .col-md-1, .col-md-5, .col-md-7, .col-md-11 { height: 100% }
 	margin-top: 10px;
 	margin-left: 5px;
 }
+.join_existing{
+	margin-left:10px;
+}
 
 .nearby_groups_heading{
 	background-color: #7e7e7e;

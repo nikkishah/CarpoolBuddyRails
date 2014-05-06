@@ -5,6 +5,7 @@
   <title>Groups</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= stylesheet_link_tag "navbar" %>
+  <%= stylesheet_link_tag "maps" %>
   <%= stylesheet_link_tag "groups" %>
   <%= stylesheet_link_tag "profile" %>
   <%= stylesheet_link_tag "bootstrap.min.css" %>
@@ -26,7 +27,7 @@
             <div class="group_membership">
               <div class="blockquote-box blockquote-success clearfix">
                   <div class="square pull-left">
-                      <span class="glyphicon glyphicon-calendar glyphicon-lg"></span>
+                      <i class="fa fa-tachometer fa-3x"></i>
                   </div>
                   <h4>
                       Team Spectacular</h4>
@@ -37,7 +38,7 @@
 
               <div class="blockquote-box blockquote-success clearfix">
                   <div class="square pull-left">
-                      <span class="glyphicon glyphicon-calendar glyphicon-lg"></span>
+                      <i class="fa fa-tachometer fa-3x"></i>
                   </div>
                   <h4>
                       Team Fantastic</h4>
@@ -52,39 +53,39 @@
 
       <div class="group_requests">
           <div class="blockquote-box blockquote-info clearfix">
-            <div class="col-md-10">
+            <div class="col-md-11">
                       <div class="square pull-left left-margin">
-                          <span class="glyphicon glyphicon-question-sign glyphicon-lg"></span>
+                           <i class="fa fa-group fa-3x"></i>
                       </div>
                       <h4> Team Stupendous </h4>
                       <p> Annie Parker, David Jones, Aimee Eldridge </p>
                   </div>
-                  <div class="col-md-2">
-                    <button type="button" class="btn btn-default btn-med red margin_upper">
-                          <span class="glyphicon glyphicon-remove glyphicon-custom red"></span>
-              </button>
-              <button type="button" class="btn btn-default btn-med green margin_upper">
-                          <span class="glyphicon glyphicon-ok glyphicon-custom green"></span>
-              </button>
+                  <div class="col-md-1">
+                      <button type="button" class="btn btn-default btn-med" style="float:left;margin-top:10px; margin-left:-25px; ">
+                           <i class="fa fa-check" style="color:#339900"></i>
+                      </button>
+                      <button type="button" class="btn btn-default btn-med" style="float:left; margin-bottom:5px; margin-left:-25px;">
+                           <i class="fa fa-trash-o" style="color:#CC0000"></i>
+                      </button>
                   </div>
             </div>
 
                 <div class="blockquote-box blockquote-info clearfix">
-                  <div class="col-md-10">
+                  <div class="col-md-11">
                       <div class="square pull-left left-margin">
-                          <span class="glyphicon glyphicon-question-sign glyphicon-lg"></span>
+                           <i class="fa fa-group fa-3x"></i>
                       </div>
                       <h4> Team Fabulous </h4>
                       <p> Dennis Tree, Wynn House </p>
                   </div>
-                  <div class="col-md-2">
-                      <button type="button" class="btn btn-default btn-med red margin_upper">
-                          <span class="glyphicon glyphicon-remove glyphicon-custom red"></span>
-              </button>
-              <button type="button" class="btn btn-default btn-med green margin_upper">
-                          <span class="glyphicon glyphicon-ok glyphicon-custom green"></span>
-              </button>
-            </div>
+                  <div class="col-md-1">
+                      <button type="button" class="btn btn-default btn-med" style="float:left;margin-top:10px; margin-left:-25px; ">
+                           <i class="fa fa-check" style="color:#339900"></i>
+                      </button>
+                      <button type="button" class="btn btn-default btn-med" style="float:left; margin-bottom:5px; margin-left:-25px;">
+                           <i class="fa fa-trash-o" style="color:#CC0000"></i>
+                      </button>
+                  </div>
                 </div>
           </div>
 
@@ -93,10 +94,10 @@
 
         </div>
         <div class="col-md-3">
-          <a href="#add_group_form" type="button" class="btn btn-primary btn-large new_group_btn" id="addGroup">Create New Group</a>
+          <a href="#add_group_form" type="button" class="btn btn-primary btn-large" id="addGroup">Create New Group</a>
         </div>
         <div class="col-md-3">
-          <%= link_to "Join Existing Group", new_group_path, :class => "btn btn-primary btn-large new_group_btn" %>
+          <%= link_to "Join Existing Group", new_group_path, :class => "btn btn-primary btn-large" %>
         </div>
 
       </div>
@@ -115,19 +116,19 @@
 
    <!-- Add Group Form -->
     <a href="#x" class="overlay" class="AddGroup" id="add_group_form"></a>
-    <div class="popup" style="height:320px">
-      <div class="name" style="text-align:center">Create New Group</div>
-      <p>Please add the name and capacity of your group.</p>
-      <div class="forminput">
+    <div class="popup" style="height:300px">
+      <div class="name" style="text-align:center; font-size:25px; color:black; font-weight:10px; border:#E8E8E8 dashed 2px;">Create New Group</div>
+      <p style="text-align:center;">Please add the name & capacity of your group.</p>
+      <div class="forminput" style="text-align:center;">
         <label for="Group Name">Group Name</label>
         <input type="text" id="group_name" class="group_name" value="" />
       </div>
-      <div class ="forminput2">
+      <div class ="forminput2" style="text-align:center;">
         <label for="Capacity">Capacity</label>
         <input type="text" id="capacity" class="capacity" value="" />
       </div>
       <div class="addWrapper">
-        <a href="#close" type="button" class="btn btn-primary btn-large new_group_btn" id="add" style="width:80px;"  > Create Group </a>
+        <a href="#close" type="button" class="btn btn-primary btn-block" id="add"> Create Group </a>
       </div>
       <a class="close" href="#close"></a>
     </div>

@@ -45,7 +45,7 @@
 	text-align: center;
 	border: black solid 1px;
 	color: white;
-	background-color: #330f53;
+	background-color: #7e7e7e;
 	font-family: 'Signika';
 }
 
@@ -55,7 +55,7 @@
 
 .ground_distance_heading{
 	text-align: center;
-	color: #330f53;
+	color: #7e7e7e;
 	text-decoration: underline;
 	font-family: 'Signika';
 }
@@ -64,7 +64,7 @@
 	text-align: center;
 	border: black solid 1px;
 	color: white;
-	background-color: #330f53;
+	background-color: #7e7e7e;
 	font-family: 'Signika';
 }
 
@@ -79,7 +79,7 @@
 
 .group_owner_heading{
 	text-align: center;
-	color: #330f53;
+	color: #7e7e7e;
 	text-decoration: underline;
 	font-family: 'Signika';
 }
@@ -112,7 +112,7 @@
 
 .other_members_heading{
 	text-align: center;
-	color: #330f53;
+	color: #7e7e7e;
 	text-decoration: underline;
 	font-family: 'Signika';
 }
