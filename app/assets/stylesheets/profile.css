@@ -16,7 +16,7 @@ h6 {font-size:1.5em; margin: 0px; padding-top: 15px;}
 /* @group core */
 .wrapper { width: 850px; overflow: hidden; margin: 0 auto; background: none; }
 
-#content { display: block; width: 1200px; margin: 0 auto;  }
+#content { display: block; width: 1200px; margin: 0 auto; margin-top: -60px; }
 .center_elm{
     display: table;
     margin: 0 auto;

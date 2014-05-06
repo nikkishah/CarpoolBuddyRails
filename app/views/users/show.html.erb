@@ -22,7 +22,7 @@
           <%= image_tag("avatar.png", :alt => "Your Avatar") %>
         </div>
 
-        <div class="data">
+        <div class="data"  style="font-family: 'Signika';">
           <h1 class="username" id="username" style="margin-top:0px">Ben Bittdiddle </h1>
           <h3 class = "userinfo" id="userphone" style="margin-top:0px">(336) 231-432 </h3>
           <h3 class = "userinfo" id="useraddress" style="margin-top:0px">320 Memorial Dr Cambridge, MA 02139 </h3>
@@ -34,8 +34,9 @@
           </div>
         </div>
         
-        <div class="children">
+        <div class="children"  style="font-family: 'Signika';">
           <h1 class= "childrenTitle"> Your Children: </h1>
+          <h5 class="no_children_message" style="margin-top:-10px;"> You currently have no children added. Please add one below. <h5>
           
           <div class="child" id="childa">
             <h2 class="childName"> Rolly Poly </h2>
@@ -54,19 +55,19 @@
         <!-- Add Child Form -->
         <a href="#x" class="overlay" class="AddChild" id="add_form"></a>
         <div class="popup" style="height:320px">
-          <div class="username" style="text-align:center">Add Your Child</div>
-          <p>Please enter school and child's passcode here</p>
+          <div class="username" style="text-align:center; color:black; font-weight:10px; border:#E8E8E8 dashed 2px; font-family: 'Signika';">Add Your Child</div>
+          <p  style="font-family: 'Signika';">Please enter school and child's passcode here</p>
           <div class="forminput">
-            <label for="school">School</label>
-            <input type="text" id="school" class="school" value="" />
+            <label for="school" style="font-family: 'Signika';">School</label>
+            <input type="text" id="school" class="school" value=""  style="font-family: 'Signika';"/>
           </div>
           <div class ="forminput2">
-            <label for="Your Child's Code">Passcode</label>
-            <input type="text" id="code" class="code" value="" />
+            <label for="Your Child's Code"  style="font-family: 'Signika';">Passcode</label>
+            <input type="text" id="code" class="code" value=""  style="font-family: 'Signika';"/>
           </div>
           <div class="warningwrapper">
-            <div class="warning">If you do not know your child's passcode please see a</div> 
-            <div class="warning">school administrator</div>
+            <div class="warning" style="font-family: 'Signika';">If you do not know your child's passcode please see a</div> 
+            <div class="warning" style="font-family: 'Signika';">school administrator</div>
           </div>
           <div class="addWrapper">
             <a href="#close" type="button" class="btn btn-primary btn-large new_group_btn" id="add" style="width:80px;"  > Add </a>
@@ -79,16 +80,16 @@
         <a href="#x" class="overlay" id="update_form"></a>
         <div class="popupform">
           <form class="updateform">
-            <h2>Update Your Information</h2>
-            Name: <input type="text" id="name_inp"><br>
-            Phone: <input type="text" id="phone_inp"><br>
-            Address: <input type="text" id="address_inp"><br>
-            Email: <input type="text" id="email_inp"><br>
+            <h2  style="font-family: 'Signika';">Update Your Information</h2>
+            Name: <input type="text" id="name_inp" style="font-family: 'Signika';"><br>
+            Phone: <input type="text" id="phone_inp" style="font-family: 'Signika';"><br>
+            Address: <input type="text" id="address_inp" style="font-family: 'Signika';"><br>
+            Email: <input type="text" id="email_inp" style="font-family: 'Signika';"><br>
             <div class="buttonOverlay">
-              <a type="button" class="btn btn-primary btn-large new_group_btn" id="save" href="#close"> Update </a>
+              <a type="button" class="btn btn-primary btn-large new_group_btn" style="font-family: 'Signika';" id="save" href="#close"> Update </a>
             </div>
           </form>
-          <a class="close" href="#close"></a>
+          <a class="close" href="#close" style="font-family: 'Signika';"></a>
         </div>
 
       <script type="text/javascript" src="external_js/jquery-1.9.0.min.js"></script>
