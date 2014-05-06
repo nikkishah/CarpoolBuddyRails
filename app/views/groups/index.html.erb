@@ -12,6 +12,7 @@
   <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Nixie+One" %>
   <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Lobster&subset=latin,cyrillic-ext,latin-ext,cyrillic" %>
   <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Signika&subset=latin,latin-ext" %>
+  <%= javascript_include_tag "groups.js" %>
   <%= javascript_include_tag "bootstrap.min.js" %>
   <%= javascript_include_tag "jquery-1.9.0.min.js" %>
 
@@ -54,7 +55,7 @@
       <div class="group_requests">
           <div class="blockquote-box blockquote-info clearfix">
             <div class="col-md-11">
-                      <div class="square pull-left left-margin">
+                      <div class="square pull-left left-margin" style="margin-left:-15px;">
                            <i class="fa fa-group fa-3x"></i>
                       </div>
                       <h4> Team Stupendous </h4>
@@ -72,7 +73,7 @@
 
                 <div class="blockquote-box blockquote-info clearfix">
                   <div class="col-md-11">
-                      <div class="square pull-left left-margin">
+                      <div class="square pull-left left-margin" style="margin-left:-15px;">
                            <i class="fa fa-group fa-3x"></i>
                       </div>
                       <h4> Team Fabulous </h4>
@@ -89,17 +90,21 @@
                 </div>
           </div>
 
-            <div class="row groups_inner_row">
-        <div class="col-md-3">
+      <div class="row groups_inner_row">
+        <div class="col-md-2">
 
         </div>
-        <div class="col-md-3">
+        <div class="col-md-2">
           <a href="#add_group_form" type="button" class="btn btn-primary btn-large" id="addGroup">Create New Group</a>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-2">
+
+        </div>
+        <div class="col-md-2">
           <%= link_to "Join Existing Group", new_group_path, :class => "btn btn-primary btn-large" %>
         </div>
-
+        <div class="col-md-3">
+        </div>
       </div>
 
       
@@ -133,7 +138,6 @@
       <a class="close" href="#close"></a>
     </div>
 
-  <script type="text/javascript" src="groups.js"></script>
 
   </body>
 </html>

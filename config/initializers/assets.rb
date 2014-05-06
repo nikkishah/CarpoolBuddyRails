@@ -9,6 +9,7 @@ Rails.application.config.assets.precompile += %w( bootstrap.min.css )
 
 
 # add all the javascript files from the original application
+Rails.application.config.assets.precompile += %w( groups.js )
 Rails.application.config.assets.precompile += %w( login.js )
 Rails.application.config.assets.precompile += %w( maps.js )
 Rails.application.config.assets.precompile += %w( bootstrap.min.js )

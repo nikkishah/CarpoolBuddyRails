@@ -1,0 +1,27 @@
+/*Loging page from: http://bootsnipp.com/snippets/featured/parallax-login-form*/
+
+body{
+    background: url(http://mymaplist.com/img/parallax/back.png);
+    background-color: #444;
+    background: url(http://mymaplist.com/img/parallax/pinlayer2.png),url(http://mymaplist.com/img/parallax/pinlayer1.png),url(http://mymaplist.com/img/parallax/back.png);    
+}
+
+.carpool_buddy_div {
+	text-align: center;
+	margin-top: -20px;
+}
+
+.carpool_buddy_heading{
+	font-size: 150px;
+	font-family: "Lobster";
+	color: #ffff7f ;
+}
+
+#login{
+	background-color:#7e7e7e; 
+	color:white
+}
+
+.vertical-offset-100{
+    padding-top:100px;
+}

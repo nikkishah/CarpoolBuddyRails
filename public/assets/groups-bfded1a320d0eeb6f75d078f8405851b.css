@@ -1,0 +1,140 @@
+.accept_request_btn{
+	font-size: 15px;
+	padding: -5px;
+}
+
+body { 
+	padding-top: 70px; 
+}
+
+.btn-custom {
+  background-color: #3f3f3f;
+  font-family: 'Signika';
+
+}
+
+
+.calendar_outer{
+	display: table;
+	margin: 0 auto;
+}
+.cancel_request_btn{
+	font-size: 15px;
+	padding: -5px;
+}
+
+.carpool_buddy_div {
+	background-color: white;
+	border: dashed black 2px;
+	text-align: center;
+	margin-top: -20px;
+}
+
+.existing_group_btn{
+	font-size: 20px;
+	margin-top: 10px;
+	margin-left: 5px;
+
+}
+
+.green{
+	color: #66CD00;
+}
+
+.margin_upper {
+	margin-top: 25px;
+}
+
+.group_feed_heading {
+	text-align: center;
+	background-color: #7e7e7e;
+	color:white;
+	font-family: 'Signika';
+}
+
+.groups_inner_row{
+	padding-top: 10px;
+}
+
+
+.group_request_heading {
+	text-align: center;
+	background-color: #7e7e7e;
+	color: white;
+	font-family: 'Signika';
+}
+
+.groups_row {
+	padding: 10px
+}
+
+/*.left-margin{
+	margin-left: -15px;
+}*/
+.navbar_option{
+	font-family: 'Signika';
+	font-size: 17px;
+}
+
+.navbar_title{
+	font-family: "Lobster";
+	font-size: 30px;
+	color:#ffff7f;
+}
+
+.new_group_btn{
+	font-size: 20px;
+	margin-top: 10px;
+	margin-right: 5px;
+}
+
+.no_group_feed_heading{
+	text-align: center;
+	padding-top: 10px;
+	font-family: 'Signika';
+}
+
+.no_group_heading{
+	text-align: center;
+	padding-top: 10px;
+	font-family: 'Signika';
+}
+
+.red{
+	color: #ff8080;
+}
+.request_table{
+	 margin: 0px auto;
+	 margin-top: 20px;
+	 visibility: visible;
+}
+
+.table_title{
+	background-color: #d3d3d3;
+}
+
+td {
+	padding-left:40px;
+	padding-right: 40px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	font-family: 'Signika';
+	font-size: 15px;
+}
+
+
+.glyphicon-lg{font-size:3em}
+.glyphicon-custom{vertical-align: baseline;}
+.blockquote-box{border-right:5px solid #E6E6E6; margin-bottom:25px; background-color: #f6f6f6}
+
+.blockquote-box .square{width:100px;min-height:50px;margin-right:22px;text-align:center!important;background-color:#E6E6E6;padding:20px 0}
+.blockquote-box.blockquote-primary{border-color:#357EBD}
+.blockquote-box.blockquote-primary .square{background-color:#428BCA;color:#FFF}
+.blockquote-box.blockquote-success{border-color:#4CAE4C}
+.blockquote-box.blockquote-success .square{background-color:#5CB85C;color:#FFF}
+.blockquote-box.blockquote-info{border-color:#46B8DA}
+.blockquote-box.blockquote-info .square{background-color:#5BC0DE;color:#FFF}
+.blockquote-box.blockquote-warning{border-color:#EEA236}
+.blockquote-box.blockquote-warning .square{background-color:#F0AD4E;color:#FFF}
+.blockquote-box.blockquote-danger{border-color:#D43F3A}
+.blockquote-box.blockquote-danger .square{background-color:#D9534F;color:#FFF}
