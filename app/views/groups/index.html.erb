@@ -64,10 +64,10 @@
                       <p style="font-family: 'Signika';"> Annie Parker, David Jones, Aimee Eldridge </p>
                   </div>
                   <div class="col-md-1">
-                      <button type="button" class="btn btn-default btn-med" style="float:left;margin-top:10px; margin-left:-25px; font-family: 'Signika'; ">
+                      <button type="button" class="btn btn-default btn-med" style="float:left;margin-top:10px; margin-left:-15px; font-family: 'Signika'; ">
                            <i class="fa fa-check" style="color:#339900"></i>
                       </button>
-                      <button type="button" class="btn btn-default btn-med" style="float:left; margin-bottom:5px; margin-left:-25px; font-family: 'Signika';">
+                      <button type="button" class="btn btn-default btn-med" style="float:left; margin-bottom:5px; margin-left:-15px; font-family: 'Signika'; padding-right:13px; padding-left:13px; position:relative;">
                            <i class="fa fa-trash-o" style="color:#CC0000"></i>
                       </button>
                   </div>
@@ -82,10 +82,10 @@
                       <p style="font-family: 'Signika';"> Dennis Tree, Wynn House </p>
                   </div>
                   <div class="col-md-1">
-                      <button type="button" class="btn btn-default btn-med" style="float:left;margin-top:10px; margin-left:-25px; ">
+                      <button type="button" class="btn btn-default btn-med" style="float:left;margin-top:10px; margin-left:-15px; ">
                            <i class="fa fa-check" style="color:#339900"></i>
                       </button>
-                      <button type="button" class="btn btn-default btn-med" style="float:left; margin-bottom:5px; margin-left:-25px;">
+                      <button type="button" class="btn btn-default btn-med" style="float:left; margin-bottom:5px; margin-left:-15px; padding-right:13px; padding-left:13px;">
                            <i class="fa fa-trash-o" style="color:#CC0000"></i>
                       </button>
                   </div>
@@ -128,8 +128,8 @@
       <p style="text-align:center;">Please add the name & capacity of your group.</p>
       <%= form_for :group, url: {action: "create"}  do |f| %>
         <div class="forminput" style="text-align:center;">
-          <%= f.label :group_name %><br>
-          <%= f.text_field :group_name %>
+          <%= f.label :name %><br>
+          <%= f.text_field :name %>
         </div>
        
         <div class ="forminput2" style="text-align:center;">
