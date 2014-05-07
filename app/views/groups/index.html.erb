@@ -128,8 +128,8 @@
       <p style="text-align:center;">Please add the name & capacity of your group.</p>
       <%= form_for :group, url: {action: "create"}  do |f| %>
         <div class="forminput" style="text-align:center;">
-          <%= f.label :group_name %><br>
-          <%= f.text_field :group_name %>
+          <%= f.label :name %><br>
+          <%= f.text_field :name %>
         </div>
        
         <div class ="forminput2" style="text-align:center;">
