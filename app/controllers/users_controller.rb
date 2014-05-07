@@ -2,6 +2,8 @@ class UsersController < ApplicationController
   protect_from_forgery
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
+  $childs_id = 1
+
   # GET /users
   # GET /users.json
   def index
@@ -57,6 +59,39 @@ class UsersController < ApplicationController
       format.html { redirect_to users_url }
       format.json { head :no_content }
     end
+  end
+  def add_child_to_user
+    last_child_id= Child.last.id
+    @user = User.find(params[:user_id])
+    children_list = ["abbc", ]
+    new_child_id = $childs_id +1
+    if @user.children.any?
+      if new_child_id <= last_child_id
+         added_child = Child.find_by_id(new_child_id)
+         @user.children << added_child 
+         $childs_id = $childs_id+1
+       end 
+    else 
+      $childs_id = 0
+      new_child_id = $childs_id +1
+      if new_child_id <= last_child_id
+         added_child = Child.find_by_id(new_child_id)
+         @user.children << added_child 
+         $childs_id = $childs_id+1
+       end
+     end
+
+
+    redirect_to User.find(params[:user_id])
+
+  end
+  def remove_child_from_user
+    @user = User.find(params[:user_id])
+    @child = Child.find(params[:child_id])
+
+    @user.children.delete(@child)
+    @user.save
+    redirect_to User.find(params[:user_id])
   end
 
   private
