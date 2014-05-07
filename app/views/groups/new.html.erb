@@ -36,26 +36,15 @@
 
 			    <div class="list-group " style="font-family:Signika; margin-top: 20px; margin-left:-15px;">
 					<!-- <a href="group_view.html?name=Esha-Atolia&distance=1.5" class="list-group-item blockquote-box blockquote-primary clicked_on"> -->
-					<a href="group_view.html?name=Esha-Atolia&distance=1.5" class="list-group-item blockquote-box blockquote-primary">
-						<h4 class="list-group-item-heading">Esha Atolia</h4>
-						<p class="list-group-item-text">1.5 miles away | capacity 4</p>
+					<% Group.find_each do |group| %>
+					  <% user = User.find(group.owner_id)%>
+					  <a href="group_view.html?name=Esha-Atolia&distance=1.5" class="list-group-item blockquote-box blockquote-primary">
+						<h4 class="list-group-item-heading"><%= user.first_name + " " + user.lastName %></h4>
+						<p class="list-group-item-text">1.5 miles away | capacity <%= group.capacity%></p>
 						<p class="list-group-item-text">Other group members:</p>
 						<p class="list-group-item-text"> Member 1, Member 2, Member 3</p>
 					</a>
-					<a href="group_view.html?name=Eta-Atolia&distance=2" class="list-group-item blockquote-box blockquote-success">
-					<!-- <a href="group_view.html?name=Eta-Atolia&distance=2" class="list-group-item blockquote-box blockquote-success" style="opacity:0.3;"> -->
-						<h4 class="list-group-item-heading" > Eta Atolia</h4>
-						<p class="list-group-item-text">2 miles away | capacity 3</p>
-						<p class="list-group-item-text">Other group members:</p>
-						<p class="list-group-item-text">Member 1, Member 2, Member 3</p>
-					</a>
-					<a href="group_view.html?name=John-Smith&distance=0.6" class="list-group-item blockquote-box blockquote-info">
-					<!-- <a href="group_view.html?name=John-Smith&distance=0.6" class="list-group-item blockquote-box blockquote-info" style="opacity:0.3;"> -->
-						<h4 class="list-group-item-heading" >John Smith</h4>
-						<p class="list-group-item-text">0.6 miles away | capacity 5</p>
-						<p class="list-group-item-text">Other group members:</p>
-						<p class="list-group-item-text">Member 1, Member 2, Member 3</p>
-					</a>
+					<% end %>
 				</div>
 				
 			</div>
