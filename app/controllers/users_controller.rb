@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   protect_from_forgery
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_filter :skip_password_attribute, only: :update
 
   $childs_id = 1
 
@@ -42,7 +43,7 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        format.html { redirect_to @user }
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }
@@ -105,6 +106,11 @@ class UsersController < ApplicationController
       params.require(:user).permit(:first_name, :lastName, :street, :city, :zipcode, :state, :email, :password,
                                    :password_confirmation)
     end
+    def skip_password_attribute
+    if params[:password].blank? && params[:password_validation].blank?
+      params.except!(:password, :password_validation)
+    end
+  end
 end
 # class UsersController < ApplicationController
 #   protect_from_forgery

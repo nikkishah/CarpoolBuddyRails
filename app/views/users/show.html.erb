@@ -23,10 +23,10 @@
         </div>
 
         <div class="data"  style="font-family: 'Signika';">
-          <h1 class="username" id="username" style="margin-top:0px">Ben Bittdiddle </h1>
+          <h1 class="username" id="username" style="margin-top:0px"><%= @user.first_name %> <%= @user.lastName %> </h1>
           <h3 class = "userinfo" id="userphone" style="margin-top:0px">(336) 231-432 </h3>
-          <h3 class = "userinfo" id="useraddress" style="margin-top:0px">320 Memorial Dr Cambridge, MA 02139 </h3>
-          <h3 class = "userinfo" id="useremail" style="margin-top:0px"> ben@gmail.com </h3>
+          <h3 class = "userinfo" id="useraddress" style="margin-top:0px"><%= @user.street %> <%= @user.city %>, <%= @user.state %> <%= @user.zipcode %> </h3>
+          <h3 class = "userinfo" id="useremail" style="margin-top:0px"><%= @user.email %> </h3>
 
           <div class= "updateButton">
             <a class="btn btn-primary btn-large new_group_btn" href="#update_form" id="update_pop"> Update </a>
@@ -86,7 +86,35 @@
         
         <a href="#x" class="overlay" id="update_form"></a>
         <div class="popupform">
-          <form class="updateform">
+          <div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@user) do |f| %>
+
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name %>
+
+      <%= f.label :lastName %>
+      <%= f.text_field :lastName %>
+
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+
+      <%= f.label :street %>
+      <%= f.text_field :street %>
+      <%= f.label :city %>
+      <%= f.text_field :city %>
+      <%= f.label :state %>
+      <%= f.text_field :state %>
+      <%= f.label :zipcode %>
+      <%= f.text_field :zipcode %>
+
+
+      <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+    <% end %>
+
+  </div>
+</div>
+          <!-- <form class="updateform">
             <h2  style="font-family: 'Signika';">Update Your Information</h2>
             Name: <input type="text" id="name_inp" style="font-family: 'Signika';"><br>
             Phone: <input type="text" id="phone_inp" style="font-family: 'Signika';"><br>
@@ -96,7 +124,7 @@
               <a type="button" class="btn btn-primary btn-large new_group_btn" style="font-family: 'Signika';" id="save" href="#close"> Update </a>
             </div>
           </form>
-          <a class="close" href="#close" style="font-family: 'Signika';"></a>
+          <a class="close" href="#close" style="font-family: 'Signika';"></a> -->
         </div>
 
       <script type="text/javascript" src="external_js/jquery-1.9.0.min.js"></script>
