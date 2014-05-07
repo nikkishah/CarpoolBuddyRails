@@ -7,6 +7,8 @@
     <!-- Import Bootstrap and custom CSS files -->
     <%= stylesheet_link_tag "profile" %>
     <%= stylesheet_link_tag "bootstrap.min.css" %>
+    <%= javascript_include_tag "bootstrap.min.js" %>
+    <%= javascript_include_tag "jquery-1.9.0.min.js" %>
     <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Nixie+One" %>
     <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Lobster&subset=latin,cyrillic-ext,latin-ext,cyrillic" %>
     <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Signika&subset=latin,latin-ext" %>
@@ -94,9 +96,7 @@
           </form>
           <a class="close" href="#close" style="font-family: 'Signika';"></a>
         </div>
-
-      <script type="text/javascript" src="external_js/jquery-1.9.0.min.js"></script>
-      <script src="js/bootstrap.min.js"></script>
+        
       <script type="text/javascript">
     $("#add").click(function(evt) {
       $("#childa").css("display", "inline");

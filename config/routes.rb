@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'static/help'
+
+  get 'static/settings'
+
   # resources :posts
 
   resources :forums do
@@ -17,9 +21,12 @@ Rails.application.routes.draw do
 
   resources :users
   resource :sessions, only: [:new, :create, :destroy]
+  match '/settings', to: "static#settings", via: "get"
+  match '/help', to: "static#help", via: "get"
   match '/signup',  to: 'users#new',            via: 'get'
   match '/signin',  to: 'sessions#new',         via: 'get'
   match '/signout', to: 'sessions#destroy',     via: 'delete'
+  get "/application/sign_out" => "application#sign_out"
   root "sessions#new"
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -20,7 +20,12 @@
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 		      </button>
+		    <% if current_user != nil %>
 		      	<%= link_to "CarpoolBuddy", groups_path, id: "logo" %>
+		    <% else %>
+		    	<%= link_to "CarpoolBuddy", new_user_path, id: "logo" %>
+		    <% end %>
+
 		    </div>
 
 
@@ -28,18 +33,24 @@
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	
 		      <ul class="nav navbar-nav navbar-right">
-		      	<li><%= link_to "My Groups", groups_path, :class => "navbar_option" %></li>
-		        <li><a class="navbar_option" href="#">Notifications  <span class="badge">0</span></a></li>
-		        <li class="dropdown">
-		          <a  class="navbar_option"href="#" class="dropdown-toggle" data-toggle="dropdown">Ben Bitdiddle<b class="caret"></b></a>
-		          <ul class="dropdown-menu">
-		          	<li><%= link_to "Profile", groups_path%></li>
-		            <li><%= link_to "Settings", groups_path%></li>
-		            <li><%= link_to "Help", groups_path%></li>
-		            <li class="divider"></li>
-		            <li><%= link_to "Logout", groups_path%></li>
-		          </ul>
-		        </li>
+		      	<% if current_user != nil %>
+			      	<li><%= link_to "My Groups", groups_path, :class => "navbar_option" %></li>
+			        <li><a class="navbar_option" href="#">Notifications  <span class="badge">0</span></a></li>
+			        <li class="dropdown">
+			          <a  class="navbar_option"href="#" class="dropdown-toggle" data-toggle="dropdown"><%=current_user.first_name %><b class="caret"></b></a>
+			          <ul class="dropdown-menu">
+			          	<li><%= link_to "Profile", current_user%></li>
+			            <li><%= link_to "Settings", settings_path%></li>
+			            <li><%= link_to "Help", help_path%></li>
+			            <li class="divider"></li>
+			           	<% puts "hello" %>
+			            <li><%= link_to "Logout", {:controller => "application", :action => "sign_out"} %></li>
+			          </ul>
+			        </li>
+		        <% else %>
+		        	<li><%= link_to "Log In", new_sessions_path, :class => "navbar_option" %></li>
+
+		        <% end %>
 		        
 		      </ul>
 		    </div><!-- /.navbar-collapse -->

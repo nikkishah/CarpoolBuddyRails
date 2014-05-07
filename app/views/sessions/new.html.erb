@@ -11,11 +11,19 @@
   </head>
 
     <!-- Load style sheets -->
-    <%= stylesheet_link_tag "login" %>
+    <%= stylesheet_link_tag "navbar" %>
     <%= stylesheet_link_tag "bootstrap.min.css" %>
-    <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Lobster&subset=latin,cyrillic-ext,latin-ext,cyrillic" %>
-    <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Signika&subset=latin,latin-ext' %>
+    <%= javascript_include_tag "bootstrap.min.js" %>
+    <%= javascript_include_tag "jquery-1.9.0.min.js" %>
+    <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Nixie+One" %>
+	<%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Lobster&subset=latin,cyrillic-ext,latin-ext,cyrillic" %>
+	<%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Signika&subset=latin,latin-ext" %>
+	<%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= stylesheet_link_tag "login" %>
     <%= javascript_include_tag "login" %>
+    <%= csrf_meta_tags %>
+
 
 
 <body style="padding-top:100px">
