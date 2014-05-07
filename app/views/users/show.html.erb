@@ -37,15 +37,18 @@
         <div class="children"  style="font-family: 'Signika';">
           <h1 class= "childrenTitle"> Your Children: </h1>
           <h5 class="no_children_message" style="margin-top:-10px;"> You currently have no children added. Please add one below. <h5>
-          
+            <% if @user.children.any? %>
+            <% @user.children.each do |child| %>
           <div class="child" id="childa">
-            <h2 class="childName"> Rolly Poly </h2>
+            <h2 class="childName"> <%= child.name %> </h2>
             <a class="delete-button" href="update"> Remove Child </a> 
             <div class="sep"></div> 
-            <h3 class ="userinfo"> Bitdiddle High School </h3>
-            <h3 class= "userinfo">Sex :   Female </h3>
-            <h3 class="userinfo">Grade : 9th </h3>
+            <h3 class ="userinfo"> <%= child.highschool %> </h3>
+            <h3 class= "userinfo">Sex :<%= child.sex %> </h3>
+            <h3 class="userinfo">Grade: <%= child.grade %>  </h3>
           </div>
+          <% end %>
+          <% end %>
 
           <div class="addChildWrapper">
             <a href="#add_form" type="button" class="btn btn-primary btn-large new_group_btn" id="addChild">Add Child</a>
