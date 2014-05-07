@@ -7,7 +7,6 @@ class User < ActiveRecord::Base
 	format:     { with: VALID_EMAIL_REGEX },
 	uniqueness: { case_sensitive: false }
 	has_secure_password
-	validates :password, length: { minimum: 6 }
 	has_many :families
 	has_many :subscriptions
 	has_many :groups, through: :subscriptions

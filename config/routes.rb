@@ -27,6 +27,9 @@ Rails.application.routes.draw do
   match '/signin',  to: 'sessions#new',         via: 'get'
   match '/signout', to: 'sessions#destroy',     via: 'delete'
   get "/application/sign_out" => "application#sign_out"
+
+  get "/users/add_child_to_user/:user_id" => "users#add_child_to_user"
+  get "/users/remove_child_from_user/:user_id/:child_id" => "users#remove_child_from_user"
   root "sessions#new"
 
   # The priority is based upon order of creation: first created -> highest priority.

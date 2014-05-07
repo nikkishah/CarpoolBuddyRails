@@ -25,10 +25,10 @@
         </div>
 
         <div class="data"  style="font-family: 'Signika';">
-          <h1 class="username" id="username" style="margin-top:0px">Ben Bittdiddle </h1>
+          <h1 class="username" id="username" style="margin-top:0px"><%= @user.first_name %> <%= @user.lastName %> </h1>
           <h3 class = "userinfo" id="userphone" style="margin-top:0px">(336) 231-432 </h3>
-          <h3 class = "userinfo" id="useraddress" style="margin-top:0px">320 Memorial Dr Cambridge, MA 02139 </h3>
-          <h3 class = "userinfo" id="useremail" style="margin-top:0px"> ben@gmail.com </h3>
+          <h3 class = "userinfo" id="useraddress" style="margin-top:0px"><%= @user.street %> <%= @user.city %>, <%= @user.state %> <%= @user.zipcode %> </h3>
+          <h3 class = "userinfo" id="useremail" style="margin-top:0px"><%= @user.email %> </h3>
 
           <div class= "updateButton">
             <a class="btn btn-primary btn-large new_group_btn" href="#update_form" id="update_pop"> Update </a>
@@ -38,19 +38,23 @@
         
         <div class="children"  style="font-family: 'Signika';">
           <h1 class= "childrenTitle"> Your Children: </h1>
-          <h5 class="no_children_message" style="margin-top:-10px;"> You currently have no children added. Please add one below. <h5>
             <% if @user.children.any? %>
             <% @user.children.each do |child| %>
-          <div class="child" id="childa">
+          <div class="child" id="childa" style="display:inline">
             <h2 class="childName"> <%= child.name %> </h2>
-            <a class="delete-button" href="update"> Remove Child </a> 
+            <%= link_to "Remove Child", {:controller => "users", :action=> "remove_child_from_user", :user_id =>@user.id, :child_id => child.id}, :class => "delete_button"%> 
             <div class="sep"></div> 
             <h3 class ="userinfo"> <%= child.highschool %> </h3>
             <h3 class= "userinfo">Sex :<%= child.sex %> </h3>
             <h3 class="userinfo">Grade: <%= child.grade %>  </h3>
           </div>
           <% end %>
+          <% else %>
+          <h5 class="no_children_message" style="margin-top:-10px;"> You currently have no children added. Please add one below. <h5>
+          </div>
+
           <% end %>
+
 
           <div class="addChildWrapper">
             <a href="#add_form" type="button" class="btn btn-primary btn-large new_group_btn" id="addChild">Add Child</a>
@@ -75,7 +79,7 @@
             <div class="warning" style="font-family: 'Signika';">school administrator</div>
           </div>
           <div class="addWrapper">
-            <a href="#close" type="button" class="btn btn-primary btn-large new_group_btn" id="add" style="width:80px;"  > Add </a>
+            <%= link_to "Add", {:controller => "users", :action=> "add_child_to_user", :user_id =>@user.id}, :class => "btn btn-primary btn-large new_group_btn", :style => "width:80px;" %>
           </div>
           <a class="close" href="#close"></a>
         </div>
@@ -84,7 +88,35 @@
         
         <a href="#x" class="overlay" id="update_form"></a>
         <div class="popupform">
-          <form class="updateform">
+          <div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@user) do |f| %>
+
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name %>
+
+      <%= f.label :lastName %>
+      <%= f.text_field :lastName %>
+
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+
+      <%= f.label :street %>
+      <%= f.text_field :street %>
+      <%= f.label :city %>
+      <%= f.text_field :city %>
+      <%= f.label :state %>
+      <%= f.text_field :state %>
+      <%= f.label :zipcode %>
+      <%= f.text_field :zipcode %>
+
+
+      <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+    <% end %>
+
+  </div>
+</div>
+          <!-- <form class="updateform">
             <h2  style="font-family: 'Signika';">Update Your Information</h2>
             Name: <input type="text" id="name_inp" style="font-family: 'Signika';"><br>
             Phone: <input type="text" id="phone_inp" style="font-family: 'Signika';"><br>
@@ -94,7 +126,7 @@
               <a type="button" class="btn btn-primary btn-large new_group_btn" style="font-family: 'Signika';" id="save" href="#close"> Update </a>
             </div>
           </form>
-          <a class="close" href="#close" style="font-family: 'Signika';"></a>
+          <a class="close" href="#close" style="font-family: 'Signika';"></a> -->
         </div>
         
       <script type="text/javascript">
