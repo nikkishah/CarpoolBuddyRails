@@ -57,8 +57,9 @@
             <% subs = Subscription.find_by_user_id_and_group_id(current_user.id, g.id) %>
             <% if  subs != nil %>
               <% if subs.accepted == false %>
-                <div class="blockquote-box blockquote-info clearfix">
-                  <div class="col-md-11">
+                <a href=<%= "/groups/" + g.id.to_s %>>
+                <div class="blockquote-box blockquote-info clearfix" >
+                  <div class="col-md-11" style="color:black">
                     <div class="square pull-left left-margin" style="margin-left:-15px;">
                       <i class="fa fa-envelope fa-3x"></i>
                     </div>
@@ -86,6 +87,7 @@
                     <%= link_to "<i class='fa fa-trash-o' style='color:#CC0000'></i>".html_safe, {:controller => "groups", :action=> "remove_request_from_group", :group_id =>g.id}, :class => "btn btn-default btn-med", :style => "float:left; margin-bottom:5px; margin-left:-15px; font-family: 'Signika'; padding-right:13px; padding-left:13px; position:relative;"%> 
                   </div>
                 </div>
+                </a>
               <% end %>
             <% end %>
           <% end %>
