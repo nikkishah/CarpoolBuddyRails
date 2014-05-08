@@ -27,7 +27,8 @@
 
               <% Group.find_each do |group| %>
                 <% if group.owner_id == current_user.id %>
-                  <div class="blockquote-box blockquote-success clearfix">
+                  <a href=<%= "/groups/" + group.id.to_s %>>
+                  <div class="blockquote-box blockquote-success clearfix" style="color:black">
                       <div class="square pull-left">
                           <i class="fa fa-group fa-3x"></i>
                       </div>
@@ -44,6 +45,7 @@
                         <% end %> 
                       </p>
                   </div>
+                  </a>
                 <% end %>
               <% end %>
             </div>
