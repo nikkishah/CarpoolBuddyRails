@@ -50,27 +50,33 @@
 
       <h3 class="group_request_heading">Group Requests</h3>
 
-
-      <div class="group_requests">
-          <div class="blockquote-box blockquote-info clearfix">
-            <div class="col-md-11">
-                      <div class="square pull-left left-margin" style="margin-left:-15px;">
-                           <i class="fa fa-envelope fa-3x"></i>
-                      </div>
-                      <h4 style="font-family: 'Signika';"> Team Stupendous </h4>
-                      <p style="font-family: 'Signika';"> Annie Parker, David Jones, Aimee Eldridge </p>
+        <div class="group_requests">
+          <% Group.find_each do |g| %>
+            <% subs = Subscription.find_by_user_id_and_group_id(current_user.id, g.id) %>
+            <% if  subs != nil %>
+              <% if subs.accepted == false %>
+                <div class="blockquote-box blockquote-info clearfix">
+                  <div class="col-md-11">
+                    <div class="square pull-left left-margin" style="margin-left:-15px;">
+                      <i class="fa fa-envelope fa-3x"></i>
+                    </div>
+                    <h4 style="font-family: 'Signika';"> <%= g.name %> </h4>
+                    <p style="font-family: 'Signika';"> 
+                      <% g.users.each do |user| %> 
+                        <%= user.first_name %> <%=user.lastName%>
+                      <% end %>
+                    </p>
                   </div>
                   <div class="col-md-1">
-                      <button type="button" class="btn btn-default btn-med" style="float:left;margin-top:10px; margin-left:-15px; font-family: 'Signika'; ">
-                           <i class="fa fa-check" style="color:#339900"></i>
-                      </button>
-                      <button type="button" class="btn btn-default btn-med" style="float:left; margin-bottom:5px; margin-left:-15px; font-family: 'Signika'; padding-right:13px; padding-left:13px; position:relative;">
-                           <i class="fa fa-trash-o" style="color:#CC0000"></i>
-                      </button>
-                  </div>
-            </div>
+                    <%= link_to "<i class='fa fa-check' style='color:#339900'></i>".html_safe, {:controller => "groups", :action=> "accept_request", :group_id =>g.id}, :class => "btn btn-default btn-med", :style => "float:left;margin-top:10px; margin-left:-15px; font-family: 'Signika'; "%> 
 
-          </div>
+                    <%= link_to "<i class='fa fa-trash-o' style='color:#CC0000'></i>".html_safe, {:controller => "groups", :action=> "remove_request_from_group", :group_id =>g.id}, :class => "btn btn-default btn-med", :style => "float:left; margin-bottom:5px; margin-left:-15px; font-family: 'Signika'; padding-right:13px; padding-left:13px; position:relative;"%> 
+                  </div>
+                </div>
+              <% end %>
+            <% end %>
+          <% end %>
+        </div>
 
       <div class="row groups_inner_row">
         <div class="col-md-2">

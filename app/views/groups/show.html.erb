@@ -30,7 +30,14 @@
           <p style="font-size:15px;"><b style="color:#0066CC;"> Address: </b> <%= user.street %> <%= user.city %>, <%= user.state%> <%= user.zipcode %> </p>
           <p style="font-size:15px;"><b style="color:#0066CC;"> Members: </b> don't have members yet</p>
           <p style="font-size:15px;"><b style="color:#0066CC;"> Capacity: </b> <%= group.capacity%></p>
-          <%= link_to "Request Group Invite", {:controller => "groups", :action=> "add_user_request_to_group", :group_id =>@group.id}, :class => "btn btn-primary btn-large btn-block", :style => "font-family: 'Signika'; font-size: 20px; width:1000px;"%> 
+          <% subscription = Subscription.find_by_user_id_and_group_id(current_user.id,group.id) %>
+          <% if subscription %>
+            <% if subscription.accepted == false%>
+              <%= link_to "Request Group Invite", {:controller => "groups", :action=> "add_user_request_to_group", :group_id =>@group.id}, :class => "btn btn-primary btn-large btn-block", :style => "font-family: 'Signika'; font-size: 20px; width:1000px;"%> 
+            <% end %>
+          <% else %>
+            <%= link_to "Group Request Pending", {:controller => "groups", :action=> "add_user_request_to_group", :group_id =>@group.id}, :class => "btn btn-primary btn-large btn-block", :style => "font-family: 'Signika'; font-size: 20px; width:1000px;", :disabled => true%> 
+          <% end %>        
         </a>
       </div>
           
