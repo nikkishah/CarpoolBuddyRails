@@ -65,7 +65,9 @@
                     <h4 style="font-family: 'Signika';"> <%= g.name %> </h4>
                     <p style="font-family: 'Signika';"> 
                       <% g.users.each do |user| %> 
-                        <%= user.first_name %> <%=user.lastName%>
+                        <% if user.id != current_user.id %>
+                          <%= user.first_name %> <%=user.lastName%>
+                        <% end %>
                       <% end %>
                     </p>
                   </div>

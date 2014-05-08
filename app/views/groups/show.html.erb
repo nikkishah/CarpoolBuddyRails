@@ -33,10 +33,10 @@
           <% subscription = Subscription.find_by_user_id_and_group_id(current_user.id,group.id) %>
           <% if subscription %>
             <% if subscription.accepted == false%>
-              <%= link_to "Request Group Invite", {:controller => "groups", :action=> "add_user_request_to_group", :group_id =>@group.id}, :class => "btn btn-primary btn-large btn-block", :style => "font-family: 'Signika'; font-size: 20px; width:1000px;"%> 
+              <%= link_to "Group Request Pending", {:controller => "groups", :action=> "add_user_request_to_group", :group_id =>@group.id}, :class => "btn btn-primary btn-large btn-block", :style => "font-family: 'Signika'; font-size: 20px; width:1000px;", :disabled => true%> 
             <% end %>
           <% else %>
-            <%= link_to "Group Request Pending", {:controller => "groups", :action=> "add_user_request_to_group", :group_id =>@group.id}, :class => "btn btn-primary btn-large btn-block", :style => "font-family: 'Signika'; font-size: 20px; width:1000px;", :disabled => true%> 
+            <%= link_to "Request Group Invite", {:controller => "groups", :action=> "add_user_request_to_group", :group_id =>@group.id}, :class => "btn btn-primary btn-large btn-block", :style => "font-family: 'Signika'; font-size: 20px; width:1000px;"%>
           <% end %>        
         </a>
       </div>
