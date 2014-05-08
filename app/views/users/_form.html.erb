@@ -10,32 +10,40 @@
       </ul>
     </div>
   <% end %>
+  <div class ="edit_user_form" style="font-family: 'Signika'; text-align:center;">
+    <h2 style="margin-bottom: 10px; border:#E8E8E8 dashed 2px; float:center; color:black;"> Edit Your Information </h2>
+    <div class="field" style="font-size: 15px; text-align:center;">
+      <%= f.label :first_name, "First Name" %><br>
+      <%= f.text_field :first_name %>
+    </div>
+    <div class="field" style="font-size: 15px; text-align:center;">
+      <%= f.label :lastName, "Last Name" %><br>
+      <%= f.text_field :lastName %>
+    </div>
+    <div class="field" style="font-size: 15px; text-align:center;">
+      <%= f.label :email %><br>
+      <%= f.text_field :email %>
+    </div>
+    <div class="field" style="font-size: 15px; text-align:center;">
+      <%= f.label :street %><br>
+      <%= f.text_field :street %>
+    </div>
+    <div class="field" style="font-size: 15px; text-align:center;">
+      <%= f.label :city %><br>
+      <%= f.text_field :city %>
+    </div>
+    <div class="field" style="font-size: 15px; text-align:center;">
+      <%= f.label :state %><br>
+      <%= f.text_field :state %>
+    </div>
+    <div class="field" style="font-size: 15px; text-align:center;">
+      <%= f.label :zipcode %><br>
+      <%= f.text_field :zipcode %>
+    </div>
+    <div class="actions" style="margin-top:20px; font-size:20px;">
+      <%= f.submit "Save Changes", class: "btn btn-large btn-primary btn-block" %>
+    </div>
+    <a class="close" href="#close"></a>
 
-  <div class="field" style="font-family: 'Signika';">
-    <%= f.label :first_name %><br>
-    <%= f.text_field :first_name %>
-  </div>
-  <div class="field" style="font-family: 'Signika';">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field" style="font-family: 'Signika';">
-    <%= f.label :street %><br>
-    <%= f.text_field :street %>
-  </div>
-  <div class="field" style="font-family: 'Signika';">
-    <%= f.label :city %><br>
-    <%= f.text_field :city %>
-  </div>
-  <div class="field" style="font-family: 'Signika';">
-    <%= f.label :state %><br>
-    <%= f.text_field :state %>
-  </div>
-  <div class="field" style="font-family: 'Signika';">
-    <%= f.label :zipcode %><br>
-    <%= f.number_field :zipcode %>
-  </div>
-  <div class="actions" style="font-family: 'Signika';">
-    <%= f.submit %>
-  </div>
+</div>
 <% end %>

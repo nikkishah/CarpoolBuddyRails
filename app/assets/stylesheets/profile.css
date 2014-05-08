@@ -235,7 +235,9 @@ a#login_pop:hover, a#join_pop:hover {
     display: inline-block;
     text-align: left;
     width: 120px;
+    font-size: 20px;
 }
+
 .popup input[type="text"], .popup input[type="password"] {
     border: 1px solid;
     border-color: #999 #ccc #ccc;
@@ -303,13 +305,18 @@ height: 20px;
 .popupform label {
     display: inline-block;
     text-align: left;
-    width: 120px;
+    width: 300px;
+    font-size: 15px;
+    float: left;
 }
 .popupform input[type="text"], .popup input[type="password"] {
     border: 1px solid;
     border-color: #999 #ccc #ccc;
     margin: 0;
-    padding: 2px;
+    padding-left: 75px;
+    padding-right: 75px;
+    font-size: 15px;
+    float:left;
 
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
@@ -333,7 +340,7 @@ height: 20px;
     top: 40%;
     visibility: hidden;
     z-index: 10;
-    height: 400px;
+    height: 515px;
     width:500px;
 
     -webkit-transform: translate(-50%, -50%);

@@ -57,15 +57,15 @@
 
 
           <div class="addChildWrapper">
-            <a href="#add_form" type="button" class="btn btn-primary btn-large new_group_btn" id="addChild">Add Child</a>
+            <a href="#add_form" type="button" class="btn btn-primary btn-large new_group_btn" id="addChild" style="font-family: 'Signika'">Add Child</a>
           </div>
         </div>
 
         <!-- Add Child Form -->
         <a href="#x" class="overlay" class="AddChild" id="add_form"></a>
-        <div class="popup" style="height:320px">
+        <div class="popup" style="height:340px">
           <div class="username" style="text-align:center; color:black; font-weight:10px; border:#E8E8E8 dashed 2px; font-family: 'Signika';">Add Your Child</div>
-          <p  style="font-family: 'Signika';">Please enter school and child's passcode here</p>
+          <p  style="font-family: 'Signika'; text-align:center;">Please enter school and child's passcode here:</p>
           <div class="forminput">
             <label for="school" style="font-family: 'Signika';">School</label>
             <input type="text" id="school" class="school" value=""  style="font-family: 'Signika';"/>
@@ -75,11 +75,11 @@
             <input type="text" id="code" class="code" value=""  style="font-family: 'Signika';"/>
           </div>
           <div class="warningwrapper">
-            <div class="warning" style="font-family: 'Signika';">If you do not know your child's passcode please see a</div> 
-            <div class="warning" style="font-family: 'Signika';">school administrator</div>
+            <div class="warning" style="font-family: 'Signika'; text-align:center;">If you do not know your child's passcode please see a</div> 
+            <div class="warning" style="font-family: 'Signika'; text-align:center;">school administrator</div>
           </div>
-          <div class="addWrapper">
-            <%= link_to "Add", {:controller => "users", :action=> "add_child_to_user", :user_id =>@user.id}, :class => "btn btn-primary btn-large new_group_btn", :style => "width:80px;" %>
+          <div class="addWrapper" style="font-family: 'Signika';">
+            <%= link_to "Add", {:controller => "users", :action=> "add_child_to_user", :user_id =>@user.id}, :class => "btn btn-primary btn-large btn-block", :style => "margin-top: 10px;" %>
           </div>
           <a class="close" href="#close"></a>
         </div>
@@ -87,46 +87,8 @@
         <!-- Update Information Form -->
         
         <a href="#x" class="overlay" id="update_form"></a>
-        <div class="popupform">
-          <div class="row">
-  <div class="span6 offset3">
-    <%= form_for(@user) do |f| %>
-
-      <%= f.label :first_name %>
-      <%= f.text_field :first_name %>
-
-      <%= f.label :lastName %>
-      <%= f.text_field :lastName %>
-
-      <%= f.label :email %>
-      <%= f.text_field :email %>
-
-      <%= f.label :street %>
-      <%= f.text_field :street %>
-      <%= f.label :city %>
-      <%= f.text_field :city %>
-      <%= f.label :state %>
-      <%= f.text_field :state %>
-      <%= f.label :zipcode %>
-      <%= f.text_field :zipcode %>
-
-
-      <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
-    <% end %>
-
-  </div>
-</div>
-          <!-- <form class="updateform">
-            <h2  style="font-family: 'Signika';">Update Your Information</h2>
-            Name: <input type="text" id="name_inp" style="font-family: 'Signika';"><br>
-            Phone: <input type="text" id="phone_inp" style="font-family: 'Signika';"><br>
-            Address: <input type="text" id="address_inp" style="font-family: 'Signika';"><br>
-            Email: <input type="text" id="email_inp" style="font-family: 'Signika';"><br>
-            <div class="buttonOverlay">
-              <a type="button" class="btn btn-primary btn-large new_group_btn" style="font-family: 'Signika';" id="save" href="#close"> Update </a>
-            </div>
-          </form>
-          <a class="close" href="#close" style="font-family: 'Signika';"></a> -->
+        <div class="popup" style="height: 575px;padding-bottom:100px;">
+          <%= render 'form' %>
         </div>
         
       <script type="text/javascript">
