@@ -41,7 +41,23 @@
 			        <li class="dropdown" id="notificationTitle">
 			          <a  class="navbar_option"href="#" class="dropdown-toggle" data-toggle="dropdown" > Notifications <span class="badge" id="notificationNum">0</span></a>
 			          <ul class="dropdown-menu">
-			            <li><a class="navbar_option" href="#" id="groupNotification"></a></li>
+			            <% count = 0 %>
+			            <% Group.find_each do |g| %>
+				            <% subs = Subscription.find_by_user_id_and_group_id(current_user.id, g.id) %>
+				            <% if  subs != nil %>
+				              <% if subs.accepted == false %>
+				                <% count = count + 1 %>
+				                <% owner = User.find(g.owner_id)%>
+				                <li><a class="navbar_option" href="/groups"><%= owner.first_name + " " + owner.lastName + "has accepted your group request" %></a></li>
+				              <% end %>
+				            <% end %>
+				        <% end %>
+				        <script type="text/javascript">
+				          <% if count > 0 %>
+				            $("#notificationNum").text(<%= count %>);
+							$("#notificationNum").addClass("alert-danger");
+				          <% end %>
+				        </script>
 			            <li class="divider"></li>
 			          </ul>
 			        </li>
@@ -66,6 +82,15 @@
 		    </div><!-- /.navbar-collapse -->
 		</div>
 	</nav>
+
+   <script type="text/javascript">
+     function changeColor(count) {
+       $("#notificationNum").text(count);
+	   $("#notificationNum").addClass("alert-danger");
+     }
+   </script>
+
+
 
 	<body>
 		<div class="container">
