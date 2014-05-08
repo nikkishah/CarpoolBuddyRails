@@ -22,7 +22,7 @@
     <script src='//google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js' type='text/javascript'></script>
     <div class="container">
       <div class="list-group " style="font-family:Signika; margin-top: 20px; margin-left:70px; text-align:center;">
-        <a class="list-group-item blockquote-box blockquote-primary" style="width: 1000px; background-color:#F0FFF0;">
+        <a class="list-group-item blockquote-box blockquote-primary" style="width: 1000px; background-color:#F5F5F5;">
           <% group = Group.find((request.original_url[-1,1]).to_i)%>
           <% user = User.find(group.owner_id)%>
           <h4 style="font-size:50px; color:#000099;"><%= group.name%></h4>
@@ -30,14 +30,18 @@
           <p style="font-size:15px;"><b style="color:#0066CC;"> Address: </b> <%= user.street %> <%= user.city %>, <%= user.state%> <%= user.zipcode %> </p>
           <p style="font-size:15px;"><b style="color:#0066CC;"> Members: </b> don't have members yet</p>
           <p style="font-size:15px;"><b style="color:#0066CC;"> Capacity: </b> <%= group.capacity%></p>
-          <% subscription = Subscription.find_by_user_id_and_group_id(current_user.id,group.id) %>
-          <% if subscription %>
-            <% if subscription.accepted == false%>
-              <%= link_to "Group Request Pending", {:controller => "groups", :action=> "add_user_request_to_group", :group_id =>@group.id}, :class => "btn btn-primary btn-large btn-block", :style => "font-family: 'Signika'; font-size: 20px; width:1000px;", :disabled => true%> 
-            <% end %>
+          <% if group.owner_id == current_user.id %>
+            <%= link_to "You Own This Group!", {:controller => "groups", :action=> "add_user_request_to_group", :group_id =>@group.id}, :class => "btn btn-primary btn-large btn-block", :style => "font-family: 'Signika'; font-size: 20px; width:1000px;", :disabled => true%> 
           <% else %>
-            <%= link_to "Request Group Invite", {:controller => "groups", :action=> "add_user_request_to_group", :group_id =>@group.id}, :class => "btn btn-primary btn-large btn-block", :style => "font-family: 'Signika'; font-size: 20px; width:1000px;"%>
-          <% end %>        
+            <% subscription = Subscription.find_by_user_id_and_group_id(current_user.id,group.id) %>
+            <% if subscription %>
+              <% if subscription.accepted == false%>
+                <%= link_to "Group Request Pending", {:controller => "groups", :action=> "add_user_request_to_group", :group_id =>@group.id}, :class => "btn btn-primary btn-large btn-block", :style => "font-family: 'Signika'; font-size: 20px; width:1000px;", :disabled => true%> 
+              <% end %>
+            <% else %>
+              <%= link_to "Request Group Invite", {:controller => "groups", :action=> "add_user_request_to_group", :group_id =>@group.id}, :class => "btn btn-primary btn-large btn-block", :style => "font-family: 'Signika'; font-size: 20px; width:1000px;"%>
+            <% end %> 
+          <% end %>       
         </a>
       </div>
           

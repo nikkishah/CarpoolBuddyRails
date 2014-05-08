@@ -62,11 +62,20 @@
                     <div class="square pull-left left-margin" style="margin-left:-15px;">
                       <i class="fa fa-envelope fa-3x"></i>
                     </div>
-                    <h4 style="font-family: 'Signika';"> <%= g.name %> </h4>
+                    <h4 style="font-family: 'Signika'; margin-bottom: -1px;"> <%= g.name %> </h4>
+                    <p style="font-family: 'Signika'; margin-bottom: -2px; margin-top:1px;"> Group Owner: <%=User.find(g.owner_id).first_name%> <%=User.find(g.owner_id).lastName%></p>
+                    <p style="font-family: 'Signika'; margin-bottom: -2px;"> Capacity: <%=g.capacity%></p>
+
                     <p style="font-family: 'Signika';"> 
-                      <% g.users.each do |user| %> 
-                        <% if user.id != current_user.id %>
-                          <%= user.first_name %> <%=user.lastName%>
+                      <% if g.users.any? %>
+                        <% g.users.each do |user| %> 
+                          <% if user.id != current_user.id %>
+                            <%= user.first_name %> <%=user.lastName%>
+                          <% else %>
+                            <% if g.users.length == 1 %>
+                              <%= "There are currently no group members." %>
+                            <% end %>
+                          <% end %>
                         <% end %>
                       <% end %>
                     </p>
