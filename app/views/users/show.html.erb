@@ -90,40 +90,42 @@
           <%= render 'form' %>
         </div>
         
-      <script type="text/javascript">
-    $("#add").click(function(evt) {
-      $("#childa").css("display", "inline");
-      $("#school").val("");
-      $("#code").val("");
-  });
-    $("#update_pop").click(function(evt) {
-      var elem = document.getElementById("name_inp");
-      var number = document.getElementById("username");
-      elem.value = number.textContent;
-      var elem = document.getElementById("phone_inp");
-      var number = document.getElementById("userphone");
-      elem.value = number.textContent;
-      var elem = document.getElementById("address_inp");
-      var number = document.getElementById("useraddress");
-      elem.value = number.textContent;
-      var elem = document.getElementById("email_inp");
-      var number = document.getElementById("useremail");
-      elem.value = number.textContent;
-    });
-    $("#save").click(function(evt) {
-      var elem = document.getElementById("name_inp");
-      var number = document.getElementById("username");
-      number.textContent = elem.value;
-      var elem = document.getElementById("phone_inp");
-      var number = document.getElementById("userphone");
-      number.textContent = elem.value;
-      var elem = document.getElementById("address_inp");
-      var number = document.getElementById("useraddress");
-      number.textContent = elem.value;
-      var elem = document.getElementById("email_inp");
-      var number = document.getElementById("useremail");
-      number.textContent = elem.value;
-    });
+    <script type="text/javascript">
+      $("#add").click(function(evt) {
+        $("#childa").css("display", "inline");
+        $("#school").val("");
+        $("#code").val("");
+      });
+      
+      $("#update_pop").click(function(evt) {
+        var elem = document.getElementById("name_inp");
+        var number = document.getElementById("username");
+        elem.value = number.textContent;
+        var elem = document.getElementById("phone_inp");
+        var number = document.getElementById("userphone");
+        elem.value = number.textContent;
+        var elem = document.getElementById("address_inp");
+        var number = document.getElementById("useraddress");
+        elem.value = number.textContent;
+        var elem = document.getElementById("email_inp");
+        var number = document.getElementById("useremail");
+        elem.value = number.textContent;
+      });
+      
+      $("#save").click(function(evt) {
+        var elem = document.getElementById("name_inp");
+        var number = document.getElementById("username");
+        number.textContent = elem.value;
+        var elem = document.getElementById("phone_inp");
+        var number = document.getElementById("userphone");
+        number.textContent = elem.value;
+        var elem = document.getElementById("address_inp");
+        var number = document.getElementById("useraddress");
+        number.textContent = elem.value;
+        var elem = document.getElementById("email_inp");
+        var number = document.getElementById("useremail");
+        number.textContent = elem.value;
+      });
 
 
     </script>
