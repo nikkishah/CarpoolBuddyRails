@@ -29,7 +29,7 @@
 
 					<% Group.find_each do |group| %>
 						<% user = User.find(group.owner_id)%>
-						<a class="list-group-item blockquote-box blockquote-primary">
+						<a href=<%= "/groups/" + group.id.to_s %> class="list-group-item blockquote-box blockquote-primary">
 							<div class="row">
 								<div class="col-md-2" style=''>
 									<i class="fa fa-map-marker fa-5x" style="margin-left: 5px; vertical-align:center; color:#ff7f50;"></i>
@@ -60,15 +60,19 @@
 		function initialize() { console.log("CALLED");
 		var handler = Gmaps.build('Google');
 		handler.buildMap({ internal: {id: 'multi_markers'}}, function(){
+		  var latLong = <%= Geocoder.coordinates(current_user.street + "," + current_user.city + "" + current_user.state + "," + current_user.zipcode) %>;
 		  var markers = handler.addMarkers([
 		    { lat: 45, lng: 4, name: 'Bar', infowindow: "I'm Bar"},
 		    { lat: 47, lng: 3.5, name: 'Baz', infowindow: "I'm Baz"},
 		    { lat: 49, lng: 4, name: 'Foo', infowindow: "I'm Foo"},
+		    { lat: latLong[0], lng: latLong[1], name: 'You', infowindow: "You"},
+
 		  ]);
 		  handler.bounds.extendWith(markers);
 		  handler.fitMapToBounds();
 			})
 		};
+
 	</script>
 	</body>
 </html>
