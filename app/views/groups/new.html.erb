@@ -35,9 +35,9 @@
 				  <li><a href="#">5</a></li>
 				  <li><a href="#">&raquo;</a></li>
 				</ul>
-
 			    <div class="list-group " style="font-family:Signika; margin-top: 20px; margin-left:-15px;">
 					<!-- <a href="group_view.html?name=Esha-Atolia&distance=1.5" class="list-group-item blockquote-box blockquote-primary clicked_on"> -->
+
 					<% Group.find_each do |group| %>
 					  <% user = User.find(group.owner_id)%>
 					  <a href="group_view.html?name=Esha-Atolia&distance=1.5" class="list-group-item blockquote-box blockquote-primary">
@@ -50,7 +50,7 @@
 				</div>
 				
 			</div>
-		    
+
 		    <div class="col-md-6">
 				  <div id="multi_markers" style='width: 570px; height: 400px;'></div>
 		    </div>
