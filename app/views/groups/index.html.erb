@@ -24,9 +24,10 @@
       <!-- <h3 id="no_group" class="no_group_heading">You currently have no groups. Please create or join one below.<h3> -->
 
             <div class="group_membership">
-
+              <% count = 0 %>
               <% Group.find_each do |group| %>
                 <% if group.owner_id == current_user.id %>
+                  <% count = count + 1 %>
                   <a href=<%= "/groups/" + group.id.to_s %>>
                   <div class="blockquote-box blockquote-success clearfix" style="color:black">
                       <div class="square pull-left">
@@ -48,15 +49,20 @@
                   </a>
                 <% end %>
               <% end %>
+              <% if count == 0 %>
+                <div>You are currently not a member of any groups.</div>
+              <% end %>
             </div>
 
       <h3 class="group_request_heading">Group Requests</h3>
 
         <div class="group_requests">
+          <% count = 0 %>
           <% Group.find_each do |g| %>
             <% subs = Subscription.find_by_user_id_and_group_id(current_user.id, g.id) %>
             <% if  subs != nil %>
               <% if subs.accepted == false %>
+                <% count = count + 1 %>
                 <a href=<%= "/groups/" + g.id.to_s %>>
                 <div class="blockquote-box blockquote-info clearfix" >
                   <div class="col-md-11" style="color:black">
@@ -90,6 +96,9 @@
                 </a>
               <% end %>
             <% end %>
+          <% end %>
+          <% if count == 0 %>
+            <div>You have no pending requests.</div>
           <% end %>
         </div>
 
