@@ -24,29 +24,28 @@
       <!-- <h3 id="no_group" class="no_group_heading">You currently have no groups. Please create or join one below.<h3> -->
 
             <div class="group_membership">
-              <div class="blockquote-box blockquote-success clearfix">
-                  <div class="square pull-left">
-                      <i class="fa fa-group fa-3x"></i>
-                  </div>
-                  <i class="fa fa-chevron-right fa" style="float:right; color:#339900; margin-top:30px; margin-right:20px;"></i>
-                  <h4 style="font-family: 'Signika';">
-                      Team Spectacular</h4>
-                  <p style="font-family: 'Signika';">
-                      Chelsea Rivers, Cameron Clark, Cady Colgate
-                  </p>
-              </div>
 
-              <div class="blockquote-box blockquote-success clearfix">
-                  <div class="square pull-left">
-                      <i class="fa fa-group fa-3x"></i>
+              <% Group.find_each do |group| %>
+                <% if group.owner_id == current_user.id %>
+                  <div class="blockquote-box blockquote-success clearfix">
+                      <div class="square pull-left">
+                          <i class="fa fa-group fa-3x"></i>
+                      </div>
+                      <i class="fa fa-chevron-right fa" style="float:right; color:#339900; margin-top:30px; margin-right:20px;"></i>
+                      <h4 style="font-family: 'Signika'; margin-bottom: 2px;"><%= group.name %></h4>
+                      <p style="font-family: 'Signika'; margin-bottom: -2px;"> Group Owner: <%=User.find(group.owner_id).first_name%> <%=User.find(group.owner_id).lastName%></p>
+                      <p style="font-family: 'Signika';">
+                        <% if group.users.any? %>
+                          <% group.users.each do |s| %>
+                            <%= s.first_name %>
+                          <% end %>
+                        <% else %>
+                            <%= "There are currently no group members." %>  
+                        <% end %> 
+                      </p>
                   </div>
-                  <i class="fa fa-chevron-right" style="float:right; color:#339900; margin-top:35px; margin-right:20px;"></i>
-                  <h4 style="font-family: 'Signika';">
-                      Team Fantastic</h4>
-                  <p style="font-family: 'Signika';">
-                      Diana Forrest, Jack Bentley, Tom Rogers
-                  </p>
-              </div>
+                <% end %>
+              <% end %>
             </div>
 
       <h3 class="group_request_heading">Group Requests</h3>
@@ -71,23 +70,6 @@
                   </div>
             </div>
 
-                <div class="blockquote-box blockquote-info clearfix">
-                  <div class="col-md-11">
-                      <div class="square pull-left left-margin" style="margin-left:-15px;">
-                           <i class="fa fa-envelope fa-3x"></i>
-                      </div>
-                      <h4 style="font-family: 'Signika';"> Team Fabulous </h4>
-                      <p style="font-family: 'Signika';"> Dennis Tree, Wynn House </p>
-                  </div>
-                  <div class="col-md-1">
-                      <button type="button" class="btn btn-default btn-med" style="float:left;margin-top:10px; margin-left:-15px; ">
-                           <i class="fa fa-check" style="color:#339900"></i>
-                      </button>
-                      <button type="button" class="btn btn-default btn-med" style="float:left; margin-bottom:5px; margin-left:-15px; padding-right:13px; padding-left:13px;">
-                           <i class="fa fa-trash-o" style="color:#CC0000"></i>
-                      </button>
-                  </div>
-                </div>
           </div>
 
       <div class="row groups_inner_row">
