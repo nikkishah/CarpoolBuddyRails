@@ -42,4 +42,4 @@ gem "font-awesome-rails"
 gem 'bootstrap-sass', '2.3.2.0'
 gem 'sprockets', '2.11.0'
 gem 'bcrypt-ruby', '3.1.2'
-
+gem 'gmaps4rails'

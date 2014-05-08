@@ -43,6 +43,7 @@ GEM
     execjs (2.0.2)
     font-awesome-rails (4.0.0.0)
       railties (>= 3.2, < 5.0)
+    gmaps4rails (2.1.2)
     hike (1.2.3)
     i18n (0.6.9)
     jbuilder (2.0.6)
@@ -122,6 +123,7 @@ DEPENDENCIES
   bootstrap-sass (= 2.3.2.0)
   coffee-rails (~> 4.0.0)
   font-awesome-rails
+  gmaps4rails
   jbuilder (~> 2.0)
   jquery-rails
   rails (= 4.1.0)
