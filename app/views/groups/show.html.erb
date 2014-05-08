@@ -31,7 +31,9 @@
               <p style="font-size:15px;"><b style="color:#0066CC;"> Address: </b> <%= user.street %> <%= user.city %>, <%= user.state%> <%= user.zipcode %> </p>
               <p style="font-size:15px;"><b style="color:#0066CC;"> Members: </b> don't have members yet</p>
               <p style="font-size:15px;"><b style="color:#0066CC;"> Capacity: </b> <%= group.capacity%></p>
-              <%= link_to "Request Group Invite", groups_path, :class => "btn btn-primary btn-large btn-block", :style => "font-family: 'Signika'; font-size: 20px; width:1000px;" %>
+              <%= link_to "Request Group Invite", {:controller => "groups", :action=> "add_user_request_to_group", :group_id =>@group.id}, :class => "btn btn-primary btn-large center_elm existing_group_btn"%> 
+        <%= link_to "Accept Group Request", {:controller => "groups", :action=> "accept_request", :group_id =>@group.id}, :class => "btn btn-primary btn-large center_elm existing_group_btn"%> 
+        <%= link_to "Delete Group Request", {:controller => "groups", :action=> "remove_request_from_group", :group_id =>@group.id}, :class => "btn btn-primary btn-large center_elm existing_group_btn"%> 
 
 
 
@@ -41,9 +43,6 @@
           <div class="calendar_outer">
             <iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=3aa3obbtlggrtgkcn81dut10kg%40group.calendar.google.com&amp;color=%23333333&amp;ctz=America%2FNew_York" style=" border:1 " width="1000" height="700" frameborder="1" scrolling="no"></iframe>
           </div>
-
-
-    
   </div>
     <script type="text/javascript">
       var handler = Gmaps.build('Google');

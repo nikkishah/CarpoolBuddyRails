@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140507193432) do
+ActiveRecord::Schema.define(version: 20140508025321) do
 
   create_table "calendars", force: true do |t|
     t.string   "name"
@@ -60,7 +60,6 @@ ActiveRecord::Schema.define(version: 20140507193432) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "owner_id"
-    t.boolean  "request_bool"
   end
 
   create_table "posts", force: true do |t|
@@ -71,9 +70,27 @@ ActiveRecord::Schema.define(version: 20140507193432) do
     t.datetime "updated_at"
   end
 
+  create_table "sessions", force: true do |t|
+    t.string   "session_id", null: false
+    t.text     "data"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "sessions", ["session_id"], name: "index_sessions_on_session_id", unique: true
+  add_index "sessions", ["updated_at"], name: "index_sessions_on_updated_at"
+
   create_table "subscriptions", force: true do |t|
     t.integer  "user_id"
     t.integer  "group_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "accepted"
+  end
+
+  create_table "user_sessions", force: true do |t|
+    t.string   "session_id"
+    t.string   "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
