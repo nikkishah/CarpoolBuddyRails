@@ -28,6 +28,7 @@
               <% Group.find_each do |group| %>
                 <% if group.owner_id == current_user.id %>
                   <a href=<%= "/groups/" + group.id.to_s %>>
+                  <% temp = group.id %>
                   <div class="blockquote-box blockquote-success clearfix" style="color:black">
                       <div class="square pull-left">
                           <i class="fa fa-group fa-3x"></i>
@@ -47,6 +48,32 @@
                   </div>
                   </a>
                 <% end %>
+
+                <% if temp != group.id %>
+                  <% if Subscription.find_by_user_id_and_group_id(current_user.id,group.id) != nil %>
+                    <a href=<%= "/groups/" + group.id.to_s %>>
+                    <% temp = group.id %>
+                    <div class="blockquote-box blockquote-success clearfix" style="color:black">
+                        <div class="square pull-left">
+                              <i class="fa fa-group fa-3x"></i>
+                          </div>
+                          <i class="fa fa-chevron-right fa" style="float:right; color:#339900; margin-top:30px; margin-right:20px;"></i>
+                          <h4 style="font-family: 'Signika'; margin-bottom: 2px;"><%= group.name %></h4>
+                          <p style="font-family: 'Signika'; margin-bottom: -2px;"> Group Owner: <%=User.find(group.owner_id).first_name%> <%=User.find(group.owner_id).lastName%></p>
+                          <p style="font-family: 'Signika';">
+                            <% if group.users.any? %>
+                              <% group.users.each do |s| %>
+                                <%= s.first_name %>
+                              <% end %>
+                            <% else %>
+                                <%= "There are currently no group members." %>  
+                            <% end %> 
+                          </p>
+                      </div>
+                    </a>
+                  <% end %>
+                <% end %>
+
               <% end %>
             </div>
 
