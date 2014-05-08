@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+  
   <head>
     <title>Carpool Buddy</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,7 +17,7 @@
   
   <body>
 
-    <div id="content" class="clearfix">
+  <div id="content" class="clearfix">
     <section id="left">
       <div id = "userStats" class="clearfix">
         
@@ -32,27 +33,25 @@
 
           <div class= "updateButton">
             <a class="btn btn-primary btn-large new_group_btn" href="#update_form" id="update_pop"> Update </a>
-            
           </div>
         </div>
         
         <div class="children"  style="font-family: 'Signika';">
           <h1 class= "childrenTitle"> Your Children: </h1>
-            <% if @user.children.any? %>
+          <% if @user.children.any? %>
             <% @user.children.each do |child| %>
-          <div class="child" id="childa" style="display:inline">
-            <h2 class="childName"> <%= child.name %> </h2>
-            <%= link_to "Remove Child", {:controller => "users", :action=> "remove_child_from_user", :user_id =>@user.id, :child_id => child.id}, :class => "delete_button"%> 
-            <div class="sep"></div> 
-            <h3 class ="userinfo"> <%= child.highschool %> </h3>
-            <h3 class= "userinfo">Sex :<%= child.sex %> </h3>
-            <h3 class="userinfo">Grade: <%= child.grade %>  </h3>
-          </div>
-          <% end %>
+              <div class="child" id="childa" style="display:inline">
+                <h2 class="childName"> <%= child.name %> </h2>
+                <%= link_to "Remove Child", {:controller => "users", :action=> "remove_child_from_user", :user_id =>@user.id, :child_id => child.id}, :class => "delete_button"%> 
+                <div class="sep"></div> 
+                <h3 class ="userinfo"> <%= child.highschool %> </h3>
+                <h3 class= "userinfo">Sex :<%= child.sex %> </h3>
+                <h3 class="userinfo">Grade: <%= child.grade %>  </h3>
+              </div>
+            <% end %>
           <% else %>
-          <h5 class="no_children_message" style="margin-top:-10px;"> You currently have no children added. Please add one below. <h5>
-          </div>
-
+            <h5 class="no_children_message" style="margin-top:-10px;"> You currently have no children added. Please add one below. <h5>
+      </div>
           <% end %>
 
 
