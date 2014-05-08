@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140507193432) do
+ActiveRecord::Schema.define(version: 20140508025321) do
 
   create_table "calendars", force: true do |t|
     t.string   "name"
@@ -60,7 +60,6 @@ ActiveRecord::Schema.define(version: 20140507193432) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "owner_id"
-    t.boolean  "request_bool"
   end
 
   create_table "posts", force: true do |t|
@@ -76,6 +75,7 @@ ActiveRecord::Schema.define(version: 20140507193432) do
     t.integer  "group_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "accepted"
   end
 
   create_table "users", force: true do |t|

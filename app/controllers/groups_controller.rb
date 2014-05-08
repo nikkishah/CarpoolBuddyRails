@@ -63,6 +63,36 @@ class GroupsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  def add_user_request_to_group
+    @group = Group.find(params[:group_id])
+    @user = User.find_by_id(current_user.id)
+    @subscription = Subscription.find_by_user_id_and_group_id(current_user.id,@group.id)
+    if @subscription
+      puts "subscription exists already"
+    else
+      @group.users << @user
+    end
+    @subscription = Subscription.find_by_user_id_and_group_id(current_user.id,@group.id)
+    @subscription.accepted = false
+    @subscription.save
+    redirect_to @group
+  end
+  def remove_request_from_group
+    @group = Group.find(params[:group_id])
+    @user = User.find_by_id(current_user.id)
+    @group.users.delete(@user)
+    @group.save
+    redirect_to @group
+  end
+
+  def accept_request
+    @group = Group.find(params[:group_id])
+    @user = User.find_by_id(current_user.id)
+    @subscription = Subscription.find_by_user_id_and_group_id(current_user.id,@group.id)
+    @subscription.accepted = true
+    @subscription.save
+    redirect_to @group
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

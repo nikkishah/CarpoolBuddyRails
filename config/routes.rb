@@ -30,6 +30,9 @@ Rails.application.routes.draw do
 
   get "/users/add_child_to_user/:user_id" => "users#add_child_to_user"
   get "/users/remove_child_from_user/:user_id/:child_id" => "users#remove_child_from_user"
+  get "/groups/add_user_request_to_group/:group_id" => "groups#add_user_request_to_group"
+  get "/groups/remove_request_from_group/:group_id" => "groups#remove_request_from_group"
+  get "/groups/accept_request/:group_id" => "groups#accept_request"
   root "sessions#new"
 
   # The priority is based upon order of creation: first created -> highest priority.
